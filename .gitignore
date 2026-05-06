@@ -1,0 +1,239 @@
+## ======================
+## Visual Studio / C# .NET
+## ======================
+
+# Archivos de usuario de Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Archivos de configuración de usuario por proyecto
+*.csproj.user
+*.vbproj.user
+*.fsproj.user
+*.dbproj.user
+
+# Directorios de salida de compilación
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Archivos generados por MSBuild
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.VC.opendb
+
+# Archivos generados por Visual Studio
+*.pidb
+*.svclog
+*.scc
+
+# Caché de profiler de Visual Studio
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# Caché del analizador de código de Visual Studio
+*.sarif
+
+## ======================
+## .NET
+## ======================
+
+# Archivos de publicación
+*.[Pp]ublish.xml
+*.azurePubxml
+*.pubxml
+*.publishproj
+
+# Directorio de publicación profile
+PublishProfiles/
+
+# NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Caché de NuGet local
+.nuget/
+
+# Directorio de restauración de NuGet
+.packages/
+
+# Directorios de herramientas dotnet
+.dotnet/
+.tool-versions
+
+# Archivo de secretos de usuario (contiene información sensible)
+**/secrets.json
+**/appsettings.Development.json
+**/appsettings.Local.json
+
+# Archivos de entorno local
+.env
+.env.local
+.env.*.local
+
+## ======================
+## Entity Framework / Migrations
+## ======================
+
+# Generados automáticamente, no siempre se ignoran (ajustar según proyecto)
+# **/Migrations/
+
+## ======================
+## Pruebas / Testing
+## ======================
+
+# Resultados de pruebas
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.trx
+*.coverage
+*.coveragexml
+coverage/
+coverage.json
+coverage.cobertura.xml
+
+# dotCover
+*.dotCover
+
+# Archivos de OpenCover
+*.opencover.xml
+
+# Reportes de Coverlet
+coverlet.runsettings
+
+## ======================
+## ASP.NET / Web
+## ======================
+
+# Archivos publicados web
+**/[Pp]ublished*/
+**/[Ww]eb[Pp]ublish*/
+
+# Archivos de configuración de IIS Express
+.vs/config/applicationhost.config
+.vs/config/
+
+# Archivos de migración de datos
+*.rdl.data
+*.bim.layout
+*.bim_*.settings
+*.rptproj.rsuser
+
+## ======================
+## Azure / Cloud
+## ======================
+
+# Azure Functions
+local.settings.json
+
+# Azure WebJobs
+WebJobs/
+
+# Service Fabric
+pkg/
+*.sfpkg
+
+## ======================
+## ReSharper / JetBrains Rider
+## ======================
+
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+.idea/
+*.sln.iml
+
+## ======================
+## Rider
+## ======================
+
+.idea/
+
+## ======================
+## Windows
+## ======================
+
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+## ======================
+## macOS
+## ======================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+## ======================
+## Node.js (si el proyecto incluye frontend)
+## ======================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp.*
+.yarn/cache
+.yarn/unplugged
+
+## ======================
+## Docker
+## ======================
+
+# No ignorar Dockerfiles, pero sí archivos sensibles locales
+docker-compose.override.yml
+.docker/
+
+## ======================
+## Archivos de log generales
+## ======================
+
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+## ======================
+## SonarQube / análisis estático
+## ======================
+
+.sonarqube/
+.sonarwork/
