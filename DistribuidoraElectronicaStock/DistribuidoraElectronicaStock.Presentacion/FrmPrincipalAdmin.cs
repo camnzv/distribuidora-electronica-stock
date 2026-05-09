@@ -34,6 +34,9 @@ namespace DistribuidoraElectronicaStock.Presentacion
         {
             MessageBox.Show("Agregar Usuario - Próxima entrega.", "Info",
               MessageBoxButtons.OK, MessageBoxIcon.Information);
+          
+
+
         }
 
         private void btnBuscarUsuario_Click(object sender, EventArgs e)
