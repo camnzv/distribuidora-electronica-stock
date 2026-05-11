@@ -125,6 +125,11 @@ namespace DistribuidoraElectronicaStock.Presentacion
             }
         
     }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
