@@ -1,17 +1,23 @@
 ﻿using DistribuidoraElectronicaStock.BBL;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DistribuidoraElectronicaStock.Presentacion
 {
-    public partial class FrmPrincipalVendedor : Form
+    public partial class FrmGestionVentas : Form
     {
-        public FrmPrincipalVendedor()
+        public FrmGestionVentas()
         {
             InitializeComponent();
             ConfigurarFormulario();
         }
-
         private void ConfigurarFormulario()
         {
             this.Text = "Distribuidora Hardware - Vendedor";
@@ -30,31 +36,24 @@ namespace DistribuidoraElectronicaStock.Presentacion
             lblRol.Text = $"Perfil: {usuario.Rol.Nombre}";
         }
 
-
-
-        private void btnAdministrarClientes_Click(object sender, EventArgs e)
+        private void btnRegistrarVenta_Click(object sender, EventArgs e)
         {
-            FrmGestionClientes frm = new FrmGestionClientes();
-
-            frm.ShowDialog();
+            MessageBox.Show(
+              "Registrar Venta - Próxima entrega.",
+              "Info",
+              MessageBoxButtons.OK,
+              MessageBoxIcon.Information);
         }
 
-        private void btnAdministrarVentas_Click(object sender, EventArgs e)
+        private void btnVerVentas_Click(object sender, EventArgs e)
         {
-            FrmGestionVentas frm = new FrmGestionVentas();
-
-            frm.ShowDialog();
+            MessageBox.Show(
+             "Ver Ventas - Próxima entrega.",
+             "Info",
+             MessageBoxButtons.OK,
+             MessageBoxIcon.Information);
         }
 
-        private void btnAdministrarProductos_Click(object sender, EventArgs e)
-        {
-            FrmGestionProductos frm = new FrmGestionProductos();
-
-            frm.ShowDialog();
-        }
-   
-
-     
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
@@ -73,7 +72,5 @@ namespace DistribuidoraElectronicaStock.Presentacion
                 this.Close();
             }
         }
-
-      
     }
 }

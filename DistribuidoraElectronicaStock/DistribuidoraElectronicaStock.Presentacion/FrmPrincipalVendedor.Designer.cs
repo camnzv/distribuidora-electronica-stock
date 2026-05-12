@@ -28,59 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
-            this.btnRegistrarVenta = new System.Windows.Forms.Button();
             this.lblRol = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDesactivarCliente = new System.Windows.Forms.Button();
-            this.btnEditarCliente = new System.Windows.Forms.Button();
-            this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnVerVentas = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.menu = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnBuscarProducto = new System.Windows.Forms.Button();
+            this.btnAdministrarProductos = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnAdministrarClientes = new System.Windows.Forms.Button();
+            this.btnAdministrarVentas = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menu.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnBuscarCliente
-            // 
-            this.btnBuscarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnBuscarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarCliente.FlatAppearance.BorderSize = 0;
-            this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(9, 61);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(129, 37);
-            this.btnBuscarCliente.TabIndex = 0;
-            this.btnBuscarCliente.Text = "Buscar Cliente";
-            this.btnBuscarCliente.UseVisualStyleBackColor = false;
-            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
-            // 
-            // btnRegistrarVenta
-            // 
-            this.btnRegistrarVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btnRegistrarVenta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegistrarVenta.FlatAppearance.BorderSize = 0;
-            this.btnRegistrarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarVenta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarVenta.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarVenta.Location = new System.Drawing.Point(12, 90);
-            this.btnRegistrarVenta.Name = "btnRegistrarVenta";
-            this.btnRegistrarVenta.Size = new System.Drawing.Size(104, 43);
-            this.btnRegistrarVenta.TabIndex = 1;
-            this.btnRegistrarVenta.Text = "Registrar Venta";
-            this.btnRegistrarVenta.UseVisualStyleBackColor = false;
-            this.btnRegistrarVenta.Click += new System.EventHandler(this.btnRegistrarVenta_Click);
             // 
             // lblRol
             // 
@@ -97,62 +61,12 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnDesactivarCliente);
-            this.panel1.Controls.Add(this.btnEditarCliente);
-            this.panel1.Controls.Add(this.btnAgregarCliente);
+            this.panel1.Controls.Add(this.btnAdministrarClientes);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnBuscarCliente);
             this.panel1.Location = new System.Drawing.Point(27, 94);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(590, 179);
             this.panel1.TabIndex = 3;
-            // 
-            // btnDesactivarCliente
-            // 
-            this.btnDesactivarCliente.BackColor = System.Drawing.Color.Red;
-            this.btnDesactivarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDesactivarCliente.FlatAppearance.BorderSize = 0;
-            this.btnDesactivarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesactivarCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDesactivarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnDesactivarCliente.Location = new System.Drawing.Point(435, 61);
-            this.btnDesactivarCliente.Name = "btnDesactivarCliente";
-            this.btnDesactivarCliente.Size = new System.Drawing.Size(128, 37);
-            this.btnDesactivarCliente.TabIndex = 2;
-            this.btnDesactivarCliente.Text = "Desactivar Cliente";
-            this.btnDesactivarCliente.UseVisualStyleBackColor = false;
-            this.btnDesactivarCliente.Click += new System.EventHandler(this.btnDesactivarCliente_Click);
-            // 
-            // btnEditarCliente
-            // 
-            this.btnEditarCliente.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnEditarCliente.FlatAppearance.BorderSize = 0;
-            this.btnEditarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnEditarCliente.Location = new System.Drawing.Point(292, 61);
-            this.btnEditarCliente.Name = "btnEditarCliente";
-            this.btnEditarCliente.Size = new System.Drawing.Size(123, 37);
-            this.btnEditarCliente.TabIndex = 2;
-            this.btnEditarCliente.Text = "Editar Cliente";
-            this.btnEditarCliente.UseVisualStyleBackColor = false;
-            this.btnEditarCliente.Click += new System.EventHandler(this.btnEditarCliente_Click);
-            // 
-            // btnAgregarCliente
-            // 
-            this.btnAgregarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btnAgregarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarCliente.FlatAppearance.BorderSize = 0;
-            this.btnAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarCliente.Location = new System.Drawing.Point(159, 61);
-            this.btnAgregarCliente.Name = "btnAgregarCliente";
-            this.btnAgregarCliente.Size = new System.Drawing.Size(114, 37);
-            this.btnAgregarCliente.TabIndex = 1;
-            this.btnAgregarCliente.Text = "Agregar Cliente";
-            this.btnAgregarCliente.UseVisualStyleBackColor = false;
-            this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
             // 
             // label1
             // 
@@ -160,7 +74,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(10, 10);
+            this.label1.Location = new System.Drawing.Point(10, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 25);
             this.label1.TabIndex = 5;
@@ -170,36 +84,19 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.btnVerVentas);
+            this.panel2.Controls.Add(this.btnAdministrarVentas);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.btnRegistrarVenta);
             this.panel2.Location = new System.Drawing.Point(27, 314);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(590, 225);
             this.panel2.TabIndex = 4;
-            // 
-            // btnVerVentas
-            // 
-            this.btnVerVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnVerVentas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVerVentas.FlatAppearance.BorderSize = 0;
-            this.btnVerVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerVentas.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerVentas.ForeColor = System.Drawing.Color.White;
-            this.btnVerVentas.Location = new System.Drawing.Point(134, 90);
-            this.btnVerVentas.Name = "btnVerVentas";
-            this.btnVerVentas.Size = new System.Drawing.Size(99, 43);
-            this.btnVerVentas.TabIndex = 3;
-            this.btnVerVentas.Text = "Ver Ventas";
-            this.btnVerVentas.UseVisualStyleBackColor = false;
-            this.btnVerVentas.Click += new System.EventHandler(this.btnVerVentas_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(7, 26);
+            this.label2.Location = new System.Drawing.Point(10, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(137, 25);
             this.label2.TabIndex = 2;
@@ -218,34 +115,34 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.btnBuscarProducto);
+            this.panel3.Controls.Add(this.btnAdministrarProductos);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(27, 577);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(590, 191);
             this.panel3.TabIndex = 6;
             // 
-            // btnBuscarProducto
+            // btnAdministrarProductos
             // 
-            this.btnBuscarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnBuscarProducto.FlatAppearance.BorderSize = 0;
-            this.btnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarProducto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarProducto.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarProducto.Location = new System.Drawing.Point(28, 71);
-            this.btnBuscarProducto.Name = "btnBuscarProducto";
-            this.btnBuscarProducto.Size = new System.Drawing.Size(116, 39);
-            this.btnBuscarProducto.TabIndex = 1;
-            this.btnBuscarProducto.Text = "Buscar Producto";
-            this.btnBuscarProducto.UseVisualStyleBackColor = false;
-            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProductos_Click);
+            this.btnAdministrarProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnAdministrarProductos.FlatAppearance.BorderSize = 0;
+            this.btnAdministrarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdministrarProductos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdministrarProductos.ForeColor = System.Drawing.Color.White;
+            this.btnAdministrarProductos.Location = new System.Drawing.Point(12, 71);
+            this.btnAdministrarProductos.Name = "btnAdministrarProductos";
+            this.btnAdministrarProductos.Size = new System.Drawing.Size(164, 39);
+            this.btnAdministrarProductos.TabIndex = 1;
+            this.btnAdministrarProductos.Text = "Administrar  Productos";
+            this.btnAdministrarProductos.UseVisualStyleBackColor = false;
+            this.btnAdministrarProductos.Click += new System.EventHandler(this.btnAdministrarProductos_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(25, 15);
+            this.label3.Location = new System.Drawing.Point(10, 15);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(166, 25);
             this.label3.TabIndex = 0;
@@ -266,6 +163,38 @@
             this.button1.Text = "Cerrar Sesion";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // btnAdministrarClientes
+            // 
+            this.btnAdministrarClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnAdministrarClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdministrarClientes.FlatAppearance.BorderSize = 0;
+            this.btnAdministrarClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdministrarClientes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdministrarClientes.ForeColor = System.Drawing.Color.White;
+            this.btnAdministrarClientes.Location = new System.Drawing.Point(15, 75);
+            this.btnAdministrarClientes.Name = "btnAdministrarClientes";
+            this.btnAdministrarClientes.Size = new System.Drawing.Size(155, 37);
+            this.btnAdministrarClientes.TabIndex = 10;
+            this.btnAdministrarClientes.Text = "Administrar Clientes";
+            this.btnAdministrarClientes.UseVisualStyleBackColor = false;
+            this.btnAdministrarClientes.Click += new System.EventHandler(this.btnAdministrarClientes_Click);
+            // 
+            // btnAdministrarVentas
+            // 
+            this.btnAdministrarVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnAdministrarVentas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdministrarVentas.FlatAppearance.BorderSize = 0;
+            this.btnAdministrarVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdministrarVentas.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdministrarVentas.ForeColor = System.Drawing.Color.White;
+            this.btnAdministrarVentas.Location = new System.Drawing.Point(18, 97);
+            this.btnAdministrarVentas.Name = "btnAdministrarVentas";
+            this.btnAdministrarVentas.Size = new System.Drawing.Size(129, 43);
+            this.btnAdministrarVentas.TabIndex = 4;
+            this.btnAdministrarVentas.Text = "Administrar Ventas";
+            this.btnAdministrarVentas.UseVisualStyleBackColor = false;
+            this.btnAdministrarVentas.Click += new System.EventHandler(this.btnAdministrarVentas_Click);
             // 
             // FrmPrincipalVendedor
             // 
@@ -293,22 +222,17 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnBuscarCliente;
-        private System.Windows.Forms.Button btnRegistrarVenta;
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnAgregarCliente;
-        private System.Windows.Forms.Button btnEditarCliente;
-        private System.Windows.Forms.Button btnDesactivarCliente;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel menu;
-        private System.Windows.Forms.Button btnVerVentas;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnBuscarProducto;
+        private System.Windows.Forms.Button btnAdministrarProductos;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdministrarClientes;
+        private System.Windows.Forms.Button btnAdministrarVentas;
     }
 }

@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmGestionClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionClientes.Designer.cs">
+      <DependentUpon>FrmGestionClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionProductos.Designer.cs">
+      <DependentUpon>FrmGestionProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionVentas.Designer.cs">
+      <DependentUpon>FrmGestionVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipalAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +96,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmGestionClientes.resx">
+      <DependentUpon>FrmGestionClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionProductos.resx">
+      <DependentUpon>FrmGestionProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionVentas.resx">
+      <DependentUpon>FrmGestionVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipalAdmin.resx">
       <DependentUpon>FrmPrincipalAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +122,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -118,6 +146,9 @@
       <Project>{c25e7aed-62bc-4175-82b0-90dce55adbae}</Project>
       <Name>DistribuidoraElectronicaStock.Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupita.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

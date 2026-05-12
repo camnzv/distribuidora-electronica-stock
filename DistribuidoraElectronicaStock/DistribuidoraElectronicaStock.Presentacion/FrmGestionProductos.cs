@@ -1,61 +1,45 @@
 ﻿using DistribuidoraElectronicaStock.BBL;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DistribuidoraElectronicaStock.Presentacion
 {
-    public partial class FrmPrincipalVendedor : Form
+    public partial class FrmGestionProductos : Form
     {
-        public FrmPrincipalVendedor()
+        public FrmGestionProductos()
         {
             InitializeComponent();
             ConfigurarFormulario();
-        }
 
+        }
         private void ConfigurarFormulario()
         {
             this.Text = "Distribuidora Hardware - Vendedor";
-
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
-
             this.MaximizeBox = false;
-
             this.StartPosition = FormStartPosition.CenterScreen;
 
-            // Usuario logueado
-            var usuario = GestorSesion
-                .RecuperarInstancia()
-                .UsuarioActual;
-
+            // muestra el rol  del usuario que inicio sesion / podria ser el nombre 
+            var usuario = GestorSesion.RecuperarInstancia().UsuarioActual;
             lblRol.Text = $"Perfil: {usuario.Rol.Nombre}";
         }
-
-
-
-        private void btnAdministrarClientes_Click(object sender, EventArgs e)
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
-            FrmGestionClientes frm = new FrmGestionClientes();
-
-            frm.ShowDialog();
+            MessageBox.Show(
+              "Buscar Producto - Próxima entrega.",
+              "Info",
+              MessageBoxButtons.OK,
+              MessageBoxIcon.Information);
         }
 
-        private void btnAdministrarVentas_Click(object sender, EventArgs e)
-        {
-            FrmGestionVentas frm = new FrmGestionVentas();
-
-            frm.ShowDialog();
-        }
-
-        private void btnAdministrarProductos_Click(object sender, EventArgs e)
-        {
-            FrmGestionProductos frm = new FrmGestionProductos();
-
-            frm.ShowDialog();
-        }
-   
-
-     
-
+      
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             var confirmar = MessageBox.Show(
@@ -74,6 +58,5 @@ namespace DistribuidoraElectronicaStock.Presentacion
             }
         }
 
-      
     }
 }

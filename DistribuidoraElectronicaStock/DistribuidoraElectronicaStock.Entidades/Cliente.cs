@@ -8,14 +8,52 @@ namespace DistribuidoraElectronicaStock.Entidades
 {
     public class Cliente
     {
-        public int IdCliente { get; set; }
+        private int _idCliente;
+        private string _nombre;
+        private string _cuit;
+        private string _telefono;
+        private bool _activo;
 
-        public string Nombre { get; set; }
+        public int IdCliente
+        {
+            get => _idCliente;
+            set => _idCliente = value;
+        }
 
-        public string Cuit { get; set; }
+        public string Nombre
+        {
+            get => _nombre;
+            set => _nombre = value;
+        }
 
-        public string Telefono { get; set; }
+        public string Cuit
+        {
+            get => _cuit;
+            set => _cuit = value;
+        }
 
-        public bool Activo { get; set; }
+        public string Telefono
+        {
+            get => _telefono;
+            set => _telefono = value;
+        }
+
+        public bool Activo
+        {
+            get => _activo;
+            set => _activo = value;
+        }
+
+        public Cliente() { }
+
+        public Cliente(int idCliente, string nombre,
+                       string cuit, string telefono, bool activo)
+        {
+            _idCliente = idCliente;
+            _nombre = nombre;
+            _cuit = cuit;
+            _telefono = telefono;
+            _activo = activo;
+        }
     }
 }

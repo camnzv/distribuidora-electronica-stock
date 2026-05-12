@@ -8,12 +8,33 @@ namespace DistribuidoraElectronicaStock.Entidades
 {
     public class Producto
     {
-        public int IdProducto { get; set; }
+        private int _idProducto;
+        private string _nombre;
+        private decimal _precio;
+        private int _stock;
 
-        public string Nombre { get; set; }
+        public int IdProducto
+        {
+            get => _idProducto;
+            set => _idProducto = value;
+        }
 
-        public decimal Precio { get; set; }
+        public string Nombre
+        {
+            get => _nombre;
+            set => _nombre = value;
+        }
 
-        public int Stock { get; set; }
+        public decimal Precio
+        {
+            get => _precio;
+            set => _precio = value;
+        }
+
+        public int Stock
+        {
+            get => _stock;
+            set => _stock = value;
+        }
     }
 }

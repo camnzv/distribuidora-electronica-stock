@@ -8,10 +8,35 @@ namespace DistribuidoraElectronicaStock.Entidades
 {
     public class Venta
     {
-        public int IdVenta { get; set; }
+        private int _idVenta;
+        private DateTime _fecha;
+        private decimal _total;
 
-        public DateTime Fecha { get; set; }
+        public int IdVenta
+        {
+            get => _idVenta;
+            set => _idVenta = value;
+        }
 
-        public decimal Total { get; set; }
+        public DateTime Fecha
+        {
+            get => _fecha;
+            set => _fecha = value;
+        }
+
+        public decimal Total
+        {
+            get => _total;
+            set => _total = value;
+        }
+
+        public Venta() { }
+
+        public Venta(int idVenta, DateTime fecha, decimal total)
+        {
+            _idVenta = idVenta;
+            _fecha = fecha;
+            _total = total;
+        }
     }
 }
