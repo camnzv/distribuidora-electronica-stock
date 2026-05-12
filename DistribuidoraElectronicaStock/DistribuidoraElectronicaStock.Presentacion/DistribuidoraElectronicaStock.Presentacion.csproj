@@ -108,6 +108,9 @@
     <EmbeddedResource Include="FrmPrincipalAdmin.resx">
       <DependentUpon>FrmPrincipalAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipalGerente.resx">
+      <DependentUpon>FrmPrincipalGerente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipalVendedor.resx">
       <DependentUpon>FrmPrincipalVendedor.cs</DependentUpon>
     </EmbeddedResource>
