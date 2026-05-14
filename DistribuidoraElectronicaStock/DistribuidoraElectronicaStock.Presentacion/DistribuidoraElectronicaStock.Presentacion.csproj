@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmReporteStockGerente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteStockGerente.Designer.cs">
+      <DependentUpon>FrmReporteStockGerente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestionClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,12 @@
     <Compile Include="FrmPrincipalVendedor.Designer.cs">
       <DependentUpon>FrmPrincipalVendedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReporteVentasGerente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteVentasGerente.Designer.cs">
+      <DependentUpon>FrmReporteVentasGerente.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +108,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmReporteStockGerente.resx">
+      <DependentUpon>FrmReporteStockGerente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionClientes.resx">
       <DependentUpon>FrmGestionClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipalVendedor.resx">
       <DependentUpon>FrmPrincipalVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteVentasGerente.resx">
+      <DependentUpon>FrmReporteVentasGerente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

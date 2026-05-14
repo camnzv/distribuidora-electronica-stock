@@ -29,33 +29,46 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblRol = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnReporteStock = new System.Windows.Forms.Button();
             this.btnReporteVentas = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.lblRol = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.panel1.Controls.Add(this.lblRol);
             this.panel1.Controls.Add(this.lblNombre);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(782, 64);
+            this.panel1.Size = new System.Drawing.Size(586, 52);
             this.panel1.TabIndex = 0;
+            // 
+            // lblRol
+            // 
+            this.lblRol.AutoSize = true;
+            this.lblRol.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRol.ForeColor = System.Drawing.Color.White;
+            this.lblRol.Location = new System.Drawing.Point(401, 32);
+            this.lblRol.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(0, 19);
+            this.lblRol.TabIndex = 1;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.White;
-            this.lblNombre.Location = new System.Drawing.Point(533, 9);
+            this.lblNombre.Location = new System.Drawing.Point(400, 7);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(0, 28);
+            this.lblNombre.Size = new System.Drawing.Size(0, 21);
             this.lblNombre.TabIndex = 0;
             // 
             // btnReporteStock
@@ -66,9 +79,10 @@
             this.btnReporteStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReporteStock.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporteStock.ForeColor = System.Drawing.Color.White;
-            this.btnReporteStock.Location = new System.Drawing.Point(42, 158);
+            this.btnReporteStock.Location = new System.Drawing.Point(32, 128);
+            this.btnReporteStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReporteStock.Name = "btnReporteStock";
-            this.btnReporteStock.Size = new System.Drawing.Size(200, 55);
+            this.btnReporteStock.Size = new System.Drawing.Size(150, 45);
             this.btnReporteStock.TabIndex = 1;
             this.btnReporteStock.Text = "Reporte de stock";
             this.btnReporteStock.UseVisualStyleBackColor = false;
@@ -82,9 +96,10 @@
             this.btnReporteVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReporteVentas.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporteVentas.ForeColor = System.Drawing.Color.White;
-            this.btnReporteVentas.Location = new System.Drawing.Point(317, 158);
+            this.btnReporteVentas.Location = new System.Drawing.Point(238, 128);
+            this.btnReporteVentas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReporteVentas.Name = "btnReporteVentas";
-            this.btnReporteVentas.Size = new System.Drawing.Size(200, 55);
+            this.btnReporteVentas.Size = new System.Drawing.Size(150, 45);
             this.btnReporteVentas.TabIndex = 2;
             this.btnReporteVentas.Text = "Reporte de venta";
             this.btnReporteVentas.UseVisualStyleBackColor = false;
@@ -98,33 +113,25 @@
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(550, 370);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(412, 301);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(200, 55);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(150, 45);
             this.btnCerrarSesion.TabIndex = 3;
             this.btnCerrarSesion.Text = "Cerrar Sesion";
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
-            // lblRol
-            // 
-            this.lblRol.AutoSize = true;
-            this.lblRol.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRol.ForeColor = System.Drawing.Color.White;
-            this.lblRol.Location = new System.Drawing.Point(535, 39);
-            this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(0, 23);
-            this.lblRol.TabIndex = 1;
-            // 
             // FrmPrincipalGerente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 453);
+            this.ClientSize = new System.Drawing.Size(586, 368);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnReporteVentas);
             this.Controls.Add(this.btnReporteStock);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmPrincipalGerente";
             this.Text = "FrmPrincipalGerente";
             this.panel1.ResumeLayout(false);
