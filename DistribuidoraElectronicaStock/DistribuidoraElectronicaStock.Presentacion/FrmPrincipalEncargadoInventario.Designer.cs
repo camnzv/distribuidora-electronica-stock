@@ -30,6 +30,7 @@
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblEncargadoDeInventario = new System.Windows.Forms.Label();
             this.lblStock = new System.Windows.Forms.Label();
             this.btnGestionProductos = new System.Windows.Forms.Button();
             this.lblGestionProveedores = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.btnRegistrarEntradaStock = new System.Windows.Forms.Button();
             this.btnVisualizarBajoStock = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.lblEncargadoDeInventario = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(784, 52);
             this.panel1.TabIndex = 0;
+            // 
+            // lblEncargadoDeInventario
+            // 
+            this.lblEncargadoDeInventario.AutoSize = true;
+            this.lblEncargadoDeInventario.BackColor = System.Drawing.Color.Transparent;
+            this.lblEncargadoDeInventario.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncargadoDeInventario.ForeColor = System.Drawing.Color.White;
+            this.lblEncargadoDeInventario.Location = new System.Drawing.Point(539, 9);
+            this.lblEncargadoDeInventario.Name = "lblEncargadoDeInventario";
+            this.lblEncargadoDeInventario.Size = new System.Drawing.Size(233, 25);
+            this.lblEncargadoDeInventario.TabIndex = 0;
+            this.lblEncargadoDeInventario.Text = "Encargado De Inventario";
             // 
             // lblStock
             // 
@@ -151,6 +163,7 @@
             this.btnRegistrarEntradaStock.TabIndex = 7;
             this.btnRegistrarEntradaStock.Text = "Registrar Entrada de Stock";
             this.btnRegistrarEntradaStock.UseVisualStyleBackColor = false;
+            this.btnRegistrarEntradaStock.Click += new System.EventHandler(this.btnRegistrarEntradaStock_Click);
             // 
             // btnVisualizarBajoStock
             // 
@@ -182,18 +195,6 @@
             this.btnCerrarSesion.Text = "Cerrar Sesion";
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
-            // 
-            // lblEncargadoDeInventario
-            // 
-            this.lblEncargadoDeInventario.AutoSize = true;
-            this.lblEncargadoDeInventario.BackColor = System.Drawing.Color.Transparent;
-            this.lblEncargadoDeInventario.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEncargadoDeInventario.ForeColor = System.Drawing.Color.White;
-            this.lblEncargadoDeInventario.Location = new System.Drawing.Point(539, 9);
-            this.lblEncargadoDeInventario.Name = "lblEncargadoDeInventario";
-            this.lblEncargadoDeInventario.Size = new System.Drawing.Size(233, 25);
-            this.lblEncargadoDeInventario.TabIndex = 0;
-            this.lblEncargadoDeInventario.Text = "Encargado De Inventario";
             // 
             // FrmPrincipalEncargadoInventario
             // 

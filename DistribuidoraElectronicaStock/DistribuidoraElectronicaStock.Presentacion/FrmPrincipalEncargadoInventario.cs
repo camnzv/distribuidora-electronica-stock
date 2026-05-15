@@ -39,5 +39,11 @@ namespace DistribuidoraElectronicaStock.Presentacion
                 this.Close();
             }
         }
+
+        private void btnRegistrarEntradaStock_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmEntradaStock();
+            frm.ShowDialog();
+        }
     }
 }
