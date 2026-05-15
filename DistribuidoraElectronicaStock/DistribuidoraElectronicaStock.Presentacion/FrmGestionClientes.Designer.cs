@@ -33,8 +33,8 @@
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.menu = new System.Windows.Forms.Panel();
-            this.lblRol = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblRol = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.menu.SuspendLayout();
             this.SuspendLayout();
@@ -112,6 +112,14 @@
             this.menu.Size = new System.Drawing.Size(799, 80);
             this.menu.TabIndex = 10;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(430, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 3;
+            // 
             // lblRol
             // 
             this.lblRol.AutoSize = true;
@@ -122,14 +130,6 @@
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(0, 25);
             this.lblRol.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(430, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 3;
             // 
             // button1
             // 
@@ -143,9 +143,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(102, 35);
             this.button1.TabIndex = 11;
-            this.button1.Text = "Cerrar Sesion";
+            this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            this.button1.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // FrmGestionClientes
             // 
