@@ -83,9 +83,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(102, 35);
             this.button1.TabIndex = 12;
-            this.button1.Text = "Cerrar Sesion";
+            this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            this.button1.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // FrmGestionProductos
             // 

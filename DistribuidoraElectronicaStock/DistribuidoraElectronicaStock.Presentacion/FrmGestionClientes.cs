@@ -68,22 +68,13 @@ namespace DistribuidoraElectronicaStock.Presentacion
               MessageBoxIcon.Information);
         }
 
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
+      
+
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            var confirmar = MessageBox.Show(
-                "¿Desea cerrar sesión?",
-                "Cerrar sesión",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
-
-            if (confirmar == DialogResult.Yes)
-            {
-                GestorSesion
-                    .RecuperarInstancia()
-                    .CerrarSesion();
-
-                this.Close();
-            }
+       
+            Close();
+        
         }
     }
 }
