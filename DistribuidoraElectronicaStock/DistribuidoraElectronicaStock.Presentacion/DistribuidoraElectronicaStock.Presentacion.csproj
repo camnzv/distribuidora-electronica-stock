@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70DA8AC3-EA00-4171-ABEA-023223202E4C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DistribuidoraElectronicaStock.Presentacion</RootNamespace>
+    <AssemblyName>DistribuidoraElectronicaStock.Presentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmEntradaStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEntradaStock.Designer.cs">
+      <DependentUpon>FrmEntradaStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionClientes.Designer.cs">
+      <DependentUpon>FrmGestionClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionProductos.Designer.cs">
+      <DependentUpon>FrmGestionProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionVentas.Designer.cs">
+      <DependentUpon>FrmGestionVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipalAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipalAdmin.Designer.cs">
+      <DependentUpon>FrmPrincipalAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipalEncargadoInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipalEncargadoInventario.Designer.cs">
+      <DependentUpon>FrmPrincipalEncargadoInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipalGerente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipalGerente.Designer.cs">
+      <DependentUpon>FrmPrincipalGerente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipalVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipalVendedor.Designer.cs">
+      <DependentUpon>FrmPrincipalVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmEntradaStock.resx">
+      <DependentUpon>FrmEntradaStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionClientes.resx">
+      <DependentUpon>FrmGestionClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionProductos.resx">
+      <DependentUpon>FrmGestionProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionVentas.resx">
+      <DependentUpon>FrmGestionVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipalAdmin.resx">
+      <DependentUpon>FrmPrincipalAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipalEncargadoInventario.resx">
+      <DependentUpon>FrmPrincipalEncargadoInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipalGerente.resx">
+      <DependentUpon>FrmPrincipalGerente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipalVendedor.resx">
+      <DependentUpon>FrmPrincipalVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DistribuidoraElectronicaStock.BBL\DistribuidoraElectronicaStock.BBL.csproj">
+      <Project>{923ff4f4-42c2-4ba5-99c6-8dfac5448d98}</Project>
+      <Name>DistribuidoraElectronicaStock.BBL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DistribuidoraElectronicaStock.Entidades\DistribuidoraElectronicaStock.Entidades.csproj">
+      <Project>{c25e7aed-62bc-4175-82b0-90dce55adbae}</Project>
+      <Name>DistribuidoraElectronicaStock.Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupita.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="DistribuidoraElectronicaStock.BBL/DistribuidoraElectronicaStock.BBL.csproj" Id="923ff4f4-42c2-4ba5-99c6-8dfac5448d98" />
+  <Project Path="DistribuidoraElectronicaStock.DAL/DistribuidoraElectronicaStock.DAL.csproj" Id="bcd29a74-f8d7-48a9-8568-887cad6f027f" />
+  <Project Path="DistribuidoraElectronicaStock.Entidades/DistribuidoraElectronicaStock.Entidades.csproj" Id="c25e7aed-62bc-4175-82b0-90dce55adbae" />
+  <Project Path="DistribuidoraElectronicaStock.Presentacion/DistribuidoraElectronicaStock.Presentacion.csproj" Id="70da8ac3-ea00-4171-abea-023223202e4c" />
+</Solution>
