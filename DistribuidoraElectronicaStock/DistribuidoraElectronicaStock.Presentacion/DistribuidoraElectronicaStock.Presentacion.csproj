@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmEntradaStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEntradaStock.Designer.cs">
+      <DependentUpon>FrmEntradaStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestionClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmEntradaStock.resx">
+      <DependentUpon>FrmEntradaStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionClientes.resx">
       <DependentUpon>FrmGestionClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipalAdmin.resx">
       <DependentUpon>FrmPrincipalAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipalEncargadoInventario.resx">
+      <DependentUpon>FrmPrincipalEncargadoInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipalGerente.resx">
       <DependentUpon>FrmPrincipalGerente.cs</DependentUpon>
