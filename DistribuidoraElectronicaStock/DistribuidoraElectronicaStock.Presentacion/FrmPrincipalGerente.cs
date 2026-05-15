@@ -27,14 +27,14 @@ namespace DistribuidoraElectronicaStock.Presentacion
         private void btnReporteStock_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show("Reporte de Stock - Próxima entrega.", "Info",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            FrmReporteStockGerente frm = new FrmReporteStockGerente();
+            frm.ShowDialog();
         }
 
         private void btnReporteVentas_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Reporte de Ventas - Próxima entrega.", "Info",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            FrmReporteVentasGerente frm = new FrmReporteVentasGerente();
+            frm.ShowDialog();
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)

@@ -94,6 +94,14 @@
     <Compile Include="FrmPrincipalVendedor.Designer.cs">
       <DependentUpon>FrmPrincipalVendedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReporteStockGerente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteStockGerente.Designer.cs" />
+    <Compile Include="FrmReporteVentasGerente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteVentasGerente.Designer.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +134,8 @@
     <EmbeddedResource Include="FrmPrincipalVendedor.resx">
       <DependentUpon>FrmPrincipalVendedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteStockGerente.resx" />
+    <EmbeddedResource Include="FrmReporteVentasGerente.resx" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
