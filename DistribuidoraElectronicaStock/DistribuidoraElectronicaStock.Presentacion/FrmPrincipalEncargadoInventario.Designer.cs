@@ -212,7 +212,11 @@
             this.Controls.Add(this.btnGestionProductos);
             this.Controls.Add(this.lblStock);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(800, 500);
+            this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "FrmPrincipalEncargadoInventario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Distribuidora Hardware - Encargado de Inventario";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

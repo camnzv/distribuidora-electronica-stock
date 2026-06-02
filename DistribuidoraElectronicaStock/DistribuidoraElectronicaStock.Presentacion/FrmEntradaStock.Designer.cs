@@ -32,14 +32,14 @@
             this.lblEncargadoDeInventario = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblOrden = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbOrdenes = new System.Windows.Forms.ComboBox();
             this.grpDatosOrden = new System.Windows.Forms.GroupBox();
-            this.lblProveedor = new System.Windows.Forms.Label();
-            this.lblProveedorValor = new System.Windows.Forms.Label();
-            this.lblFechaEmision = new System.Windows.Forms.Label();
-            this.lblEstado = new System.Windows.Forms.Label();
-            this.lblFechaEmisionValor = new System.Windows.Forms.Label();
             this.lblEstadoValor = new System.Windows.Forms.Label();
+            this.lblFechaEmisionValor = new System.Windows.Forms.Label();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.lblFechaEmision = new System.Windows.Forms.Label();
+            this.lblProveedorValor = new System.Windows.Forms.Label();
+            this.lblProveedor = new System.Windows.Forms.Label();
             this.dgvDetalle = new System.Windows.Forms.DataGridView();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -93,14 +93,15 @@
             this.lblOrden.TabIndex = 3;
             this.lblOrden.Text = "Orden de Compra:";
             // 
-            // comboBox1
+            // cmbOrdenes
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(282, 107);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(326, 21);
-            this.comboBox1.TabIndex = 4;
+            this.cmbOrdenes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOrdenes.FormattingEnabled = true;
+            this.cmbOrdenes.Location = new System.Drawing.Point(282, 107);
+            this.cmbOrdenes.Name = "cmbOrdenes";
+            this.cmbOrdenes.Size = new System.Drawing.Size(119, 21);
+            this.cmbOrdenes.TabIndex = 4;
+            this.cmbOrdenes.SelectedIndexChanged += new System.EventHandler(this.cmbOrdenes_SelectedIndexChanged);
             // 
             // grpDatosOrden
             // 
@@ -112,39 +113,26 @@
             this.grpDatosOrden.Controls.Add(this.lblProveedor);
             this.grpDatosOrden.Location = new System.Drawing.Point(186, 152);
             this.grpDatosOrden.Name = "grpDatosOrden";
-            this.grpDatosOrden.Size = new System.Drawing.Size(422, 110);
+            this.grpDatosOrden.Size = new System.Drawing.Size(586, 110);
             this.grpDatosOrden.TabIndex = 5;
             this.grpDatosOrden.TabStop = false;
             this.grpDatosOrden.Text = "Datos de la Orden";
             // 
-            // lblProveedor
+            // lblEstadoValor
             // 
-            this.lblProveedor.AutoSize = true;
-            this.lblProveedor.Location = new System.Drawing.Point(7, 35);
-            this.lblProveedor.Name = "lblProveedor";
-            this.lblProveedor.Size = new System.Drawing.Size(59, 13);
-            this.lblProveedor.TabIndex = 0;
-            this.lblProveedor.Text = "Proveedor:";
-            this.lblProveedor.Click += new System.EventHandler(this.label1_Click);
+            this.lblEstadoValor.AutoSize = true;
+            this.lblEstadoValor.Location = new System.Drawing.Point(56, 86);
+            this.lblEstadoValor.Name = "lblEstadoValor";
+            this.lblEstadoValor.Size = new System.Drawing.Size(0, 13);
+            this.lblEstadoValor.TabIndex = 5;
             // 
-            // lblProveedorValor
+            // lblFechaEmisionValor
             // 
-            this.lblProveedorValor.AutoSize = true;
-            this.lblProveedorValor.ForeColor = System.Drawing.Color.Black;
-            this.lblProveedorValor.Location = new System.Drawing.Point(72, 20);
-            this.lblProveedorValor.Name = "lblProveedorValor";
-            this.lblProveedorValor.Size = new System.Drawing.Size(0, 13);
-            this.lblProveedorValor.TabIndex = 1;
-            // 
-            // lblFechaEmision
-            // 
-            this.lblFechaEmision.AutoSize = true;
-            this.lblFechaEmision.Location = new System.Drawing.Point(7, 62);
-            this.lblFechaEmision.Name = "lblFechaEmision";
-            this.lblFechaEmision.Size = new System.Drawing.Size(93, 13);
-            this.lblFechaEmision.TabIndex = 2;
-            this.lblFechaEmision.Text = "Fecha de emisión:";
-            this.lblFechaEmision.Click += new System.EventHandler(this.lblFechaEmision_Click);
+            this.lblFechaEmisionValor.AutoSize = true;
+            this.lblFechaEmisionValor.Location = new System.Drawing.Point(96, 62);
+            this.lblFechaEmisionValor.Name = "lblFechaEmisionValor";
+            this.lblFechaEmisionValor.Size = new System.Drawing.Size(0, 13);
+            this.lblFechaEmisionValor.TabIndex = 4;
             // 
             // lblEstado
             // 
@@ -156,21 +144,34 @@
             this.lblEstado.Text = "Estado:";
             this.lblEstado.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // lblFechaEmisionValor
+            // lblFechaEmision
             // 
-            this.lblFechaEmisionValor.AutoSize = true;
-            this.lblFechaEmisionValor.Location = new System.Drawing.Point(96, 62);
-            this.lblFechaEmisionValor.Name = "lblFechaEmisionValor";
-            this.lblFechaEmisionValor.Size = new System.Drawing.Size(0, 13);
-            this.lblFechaEmisionValor.TabIndex = 4;
+            this.lblFechaEmision.AutoSize = true;
+            this.lblFechaEmision.Location = new System.Drawing.Point(7, 62);
+            this.lblFechaEmision.Name = "lblFechaEmision";
+            this.lblFechaEmision.Size = new System.Drawing.Size(93, 13);
+            this.lblFechaEmision.TabIndex = 2;
+            this.lblFechaEmision.Text = "Fecha de emisión:";
+            this.lblFechaEmision.Click += new System.EventHandler(this.lblFechaEmision_Click);
             // 
-            // lblEstadoValor
+            // lblProveedorValor
             // 
-            this.lblEstadoValor.AutoSize = true;
-            this.lblEstadoValor.Location = new System.Drawing.Point(56, 86);
-            this.lblEstadoValor.Name = "lblEstadoValor";
-            this.lblEstadoValor.Size = new System.Drawing.Size(0, 13);
-            this.lblEstadoValor.TabIndex = 5;
+            this.lblProveedorValor.AutoSize = true;
+            this.lblProveedorValor.ForeColor = System.Drawing.Color.Black;
+            this.lblProveedorValor.Location = new System.Drawing.Point(73, 40);
+            this.lblProveedorValor.Name = "lblProveedorValor";
+            this.lblProveedorValor.Size = new System.Drawing.Size(0, 13);
+            this.lblProveedorValor.TabIndex = 1;
+            // 
+            // lblProveedor
+            // 
+            this.lblProveedor.AutoSize = true;
+            this.lblProveedor.Location = new System.Drawing.Point(8, 40);
+            this.lblProveedor.Name = "lblProveedor";
+            this.lblProveedor.Size = new System.Drawing.Size(59, 13);
+            this.lblProveedor.TabIndex = 0;
+            this.lblProveedor.Text = "Proveedor:";
+            this.lblProveedor.Click += new System.EventHandler(this.label1_Click);
             // 
             // dgvDetalle
             // 
@@ -180,8 +181,9 @@
             this.dgvDetalle.Location = new System.Drawing.Point(186, 268);
             this.dgvDetalle.Name = "dgvDetalle";
             this.dgvDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalle.Size = new System.Drawing.Size(422, 181);
+            this.dgvDetalle.Size = new System.Drawing.Size(587, 181);
             this.dgvDetalle.TabIndex = 6;
+            this.dgvDetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalle_CellContentClick);
             // 
             // btnConfirmar
             // 
@@ -197,6 +199,7 @@
             this.btnConfirmar.TabIndex = 8;
             this.btnConfirmar.Text = "Confirmar Entrada";
             this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // btnCancelar
             // 
@@ -224,11 +227,15 @@
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.dgvDetalle);
             this.Controls.Add(this.grpDatosOrden);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbOrdenes);
             this.Controls.Add(this.lblOrden);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(800, 500);
+            this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "FrmEntradaStock";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Encargado de Inventario - Registrar Entrada de Stock";
             this.Load += new System.EventHandler(this.FrmEntradaStock_Load);
             this.panel1.ResumeLayout(false);
@@ -247,7 +254,7 @@
         private System.Windows.Forms.Label lblEncargadoDeInventario;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblOrden;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbOrdenes;
         private System.Windows.Forms.GroupBox grpDatosOrden;
         private System.Windows.Forms.Label lblProveedor;
         private System.Windows.Forms.Label lblFechaEmision;
