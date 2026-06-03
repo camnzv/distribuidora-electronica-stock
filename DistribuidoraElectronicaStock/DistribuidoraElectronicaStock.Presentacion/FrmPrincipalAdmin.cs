@@ -32,9 +32,10 @@ namespace DistribuidoraElectronicaStock.Presentacion
 
         private void btnAgregarUsuario_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Agregar Usuario - Próxima entrega.", "Info",
-              MessageBoxButtons.OK, MessageBoxIcon.Information);
-          
+            
+            Form formularioModal = new FrmAgregarUsuario();
+            formularioModal.ShowDialog();
+
 
 
         }
