@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="GestorOrdenCompra.cs" />
     <Compile Include="GestorProductos.cs" />
+    <Compile Include="GestorRoles.cs" />
     <Compile Include="GestorVentas.cs" />
     <Compile Include="GestorClientes.cs" />
     <Compile Include="GestorSesion.cs" />

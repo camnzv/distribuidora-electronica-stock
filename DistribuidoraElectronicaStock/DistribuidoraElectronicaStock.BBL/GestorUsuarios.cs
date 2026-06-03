@@ -22,6 +22,13 @@ namespace DistribuidoraElectronicaStock.BBL
         {
             return usuarioDAL.ObtenerPorDniYPassword(dni, password);
         }
-       
+
+
+        
+        public bool AgregarUsuario(Usuario usuario)
+        {
+            int filasAfectadas = usuarioDAL.AgregarUsuario(usuario);
+            return filasAfectadas > 0;
+        }
     }
 }
