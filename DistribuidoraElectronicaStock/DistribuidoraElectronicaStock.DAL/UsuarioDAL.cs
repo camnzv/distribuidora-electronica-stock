@@ -63,6 +63,56 @@ namespace DistribuidoraElectronicaStock.DAL
 
             return conexion.EscribirPorStoreProcedure("SP_AGREGAR_USUARIO", parametros);
         }
+
+
+        public List<Usuario> BuscarUsuarios(string nombre = null, string apellido = null,
+                                    int? dni = null, int? rolId = null)
+        {
+            List<Usuario> usuarios = new List<Usuario>();
+
+              SqlParameter[] parametros =
+             {
+                conexion.crearParametro("@nombre",   (object)nombre   ?? DBNull.Value),
+                conexion.crearParametro("@apellido", (object)apellido ?? DBNull.Value),
+                conexion.crearParametro("@dni",      dni.HasValue    ? (object)dni.Value    : DBNull.Value),
+                conexion.crearParametro("@rol_id",   rolId.HasValue  ? (object)rolId.Value  : DBNull.Value)
+            };
+
+            DataTable tabla = conexion.LeerPorStoreProcedure("SP_BUSCAR_USUARIOS", parametros);
+
+            if (tabla == null) return usuarios;
+
+            foreach (DataRow fila in tabla.Rows)
+            {
+                Rol rol = new Rol(
+                    Convert.ToInt32(fila["rol_id"]),
+                    fila["nombreRol"].ToString(),
+                    fila["descripcion"].ToString()
+                );
+
+                Usuario usuario = new Usuario(
+                    Convert.ToInt32(fila["id_usuario"]),
+                    fila["nombre"].ToString(),
+                    fila["apellido"].ToString(),
+                    fila["email"].ToString(),
+                    "",
+                    Convert.ToInt32(fila["dni"]),
+                    rol
+                );
+
+                usuarios.Add(usuario);
+            }
+
+            return usuarios;
+        }
+
+
+
+
+
+
+
+
     }
 
 
