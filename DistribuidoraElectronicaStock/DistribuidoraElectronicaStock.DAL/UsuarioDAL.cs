@@ -47,6 +47,22 @@ namespace DistribuidoraElectronicaStock.DAL
                 rol
             );
         }
+
+        public int AgregarUsuario(Usuario usuario)
+        {
+            SqlParameter[] parametros =
+                    {
+                conexion.crearParametro("@rol_id",   usuario.RolId),
+                conexion.crearParametro("@nombre",   usuario.Nombre),
+                conexion.crearParametro("@apellido", usuario.Apellido),
+                conexion.crearParametro("@email",    usuario.Email),
+                conexion.crearParametro("@password", usuario.Password),
+                conexion.crearParametro("@dni",      usuario.Dni),
+                conexion.crearParametro("@activo",   1)
+                   };
+
+            return conexion.EscribirPorStoreProcedure("SP_AGREGAR_USUARIO", parametros);
+        }
     }
 
 

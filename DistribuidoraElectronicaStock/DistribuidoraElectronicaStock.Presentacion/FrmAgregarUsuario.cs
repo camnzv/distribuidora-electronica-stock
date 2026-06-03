@@ -1,4 +1,5 @@
-﻿using DistribuidoraElectronicaStock.Entidades;
+﻿using DistribuidoraElectronicaStock.BBL;
+using DistribuidoraElectronicaStock.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,13 +42,29 @@ namespace DistribuidoraElectronicaStock.Presentacion
 
         private void CargarRoles()
         {
-            cmbRol.Items.Clear();
-            cmbRol.Items.Add(new Rol(1, "Administrador", "Gestión total"));
-            cmbRol.Items.Add(new Rol(2, "Vendedor", "Ventas y clientes"));
-            cmbRol.Items.Add(new Rol(3, "Encargado Inventario", "Inventario y logística"));
-            cmbRol.Items.Add(new Rol(4, "Gerente", "Reportes"));
-            cmbRol.DisplayMember = "Nombre";
-            cmbRol.SelectedIndex = 0;
+            try
+            {
+                GestorRoles gestorRoles = new GestorRoles();
+                List<Rol> roles = gestorRoles.RecuperarTodos();
+
+                cmbRol.Items.Clear();
+
+                foreach (Rol rol in roles)
+                {
+                    cmbRol.Items.Add(rol);
+                }
+
+                cmbRol.DisplayMember = "Nombre";
+
+                if (cmbRol.Items.Count > 0)
+                    cmbRol.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Error al cargar los roles:\n{ex.Message}",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private bool ValidarCampos()
@@ -110,15 +127,34 @@ namespace DistribuidoraElectronicaStock.Presentacion
                 rolSeleccionado
             );
 
-            //  new GestorUsuarios().Agregar(nuevoUsuario)
-            MessageBox.Show(
-                $"Usuario {nuevoUsuario.Nombre} {nuevoUsuario.Apellido} agregado correctamente",
-                "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                GestorUsuarios gestor = new GestorUsuarios();
 
-            this.Close();
+                if (gestor.AgregarUsuario(nuevoUsuario))
+                {
+                    MessageBox.Show(
+                        $"Usuario {nuevoUsuario.Nombre} {nuevoUsuario.Apellido} agregado correctamente.",
+                        "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "No se pudo agregar el usuario. Intente nuevamente.",
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Error al conectar con la base de datos:\n{ex.Message}",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        
+       
     }
 
 
