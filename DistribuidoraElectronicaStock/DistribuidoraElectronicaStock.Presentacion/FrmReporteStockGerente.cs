@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DistribuidoraElectronicaStock.BBL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,16 +16,22 @@ namespace DistribuidoraElectronicaStock.Presentacion
         public FrmReporteStockGerente()
         {
             InitializeComponent();
+            ConfigurarFormulario();
+        }
+        private void ConfigurarFormulario()
+        {
+            this.Text = "Distribuidora Hardware - Gerente";
+            this.StartPosition = FormStartPosition.CenterScreen;
+
+
+            var usuario = GestorSesion.RecuperarInstancia().UsuarioActual;
+            lblNombre.Text = $"{usuario.Nombre} {usuario.Apellido}";
+            lblRol.Text = $"Perfil: {usuario.Rol.Nombre}";
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void FrmReporteStockGerente_Load(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }
