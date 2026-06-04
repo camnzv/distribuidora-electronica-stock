@@ -66,17 +66,23 @@ namespace DistribuidoraElectronicaStock.DAL
 
 
         public List<Usuario> BuscarUsuarios(string nombre = null, string apellido = null,
-                                    int? dni = null, int? rolId = null)
+                                     int? dni = null, int? rolId = null, int? activo = null)
         {
             List<Usuario> usuarios = new List<Usuario>();
 
-              SqlParameter[] parametros =
-             {
-                conexion.crearParametro("@nombre",   (object)nombre   ?? DBNull.Value),
-                conexion.crearParametro("@apellido", (object)apellido ?? DBNull.Value),
-                conexion.crearParametro("@dni",      dni.HasValue    ? (object)dni.Value    : DBNull.Value),
-                conexion.crearParametro("@rol_id",   rolId.HasValue  ? (object)rolId.Value  : DBNull.Value)
-            };
+            SqlParameter paramNombre = new SqlParameter("@nombre", SqlDbType.VarChar, 45);
+            SqlParameter paramApellido = new SqlParameter("@apellido", SqlDbType.VarChar, 45);
+            SqlParameter paramDni = new SqlParameter("@dni", SqlDbType.Int);
+            SqlParameter paramRolId = new SqlParameter("@rol_id", SqlDbType.Int);
+            SqlParameter paramActivo = new SqlParameter("@activo", SqlDbType.Int);
+
+            paramNombre.Value = (object)nombre ?? DBNull.Value;
+            paramApellido.Value = (object)apellido ?? DBNull.Value;
+            paramDni.Value = dni.HasValue ? (object)dni.Value : DBNull.Value;
+            paramRolId.Value = rolId.HasValue ? (object)rolId.Value : DBNull.Value;
+            paramActivo.Value = activo.HasValue ? (object)activo.Value : DBNull.Value;
+
+            SqlParameter[] parametros = { paramNombre, paramApellido, paramDni, paramRolId, paramActivo };
 
             DataTable tabla = conexion.LeerPorStoreProcedure("SP_BUSCAR_USUARIOS", parametros);
 
@@ -100,15 +106,40 @@ namespace DistribuidoraElectronicaStock.DAL
                     rol
                 );
 
+                usuario.Activo = Convert.ToInt32(fila["activo"]) == 1;
+
                 usuarios.Add(usuario);
             }
 
             return usuarios;
         }
+        public bool ActualizarUsuario(Usuario usuario)
+        {
+            SqlParameter[] parametros =
+            {
+                conexion.crearParametro("@id_usuario", usuario.IdUsuario),
+                conexion.crearParametro("@rol_id",     usuario.RolId),
+                conexion.crearParametro("@nombre",     usuario.Nombre),
+                conexion.crearParametro("@apellido",   usuario.Apellido),
+                conexion.crearParametro("@email",      usuario.Email),
+                conexion.crearParametro("@dni",        usuario.Dni),
+                conexion.crearParametro("@activo",     usuario.Activo ? 1 : 0)
+            };
 
+            int filasAfectadas = conexion.EscribirPorStoreProcedure("SP_ACTUALIZAR_USUARIO", parametros);
+            return filasAfectadas > 0;
+        }
 
+        public bool EliminarUsuario(int idUsuario)
+        {
+                    SqlParameter[] parametros =
+                    {
+                conexion.crearParametro("@id_usuario", idUsuario)
+               };
 
-
+                    int filasAfectadas = conexion.EscribirPorStoreProcedure("SP_ELIMINAR_USUARIO", parametros);
+                    return filasAfectadas > 0;
+        }
 
 
 

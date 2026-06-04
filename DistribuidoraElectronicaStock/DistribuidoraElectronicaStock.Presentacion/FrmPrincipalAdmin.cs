@@ -42,8 +42,9 @@ namespace DistribuidoraElectronicaStock.Presentacion
 
         private void btnBuscarUsuario_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Buscar Usuario(editar-eliminar) - Próxima entrega.", "Info",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            Form formulario = new FrmBuscarUsuario();
+            formulario.Show();
 
         }
 
