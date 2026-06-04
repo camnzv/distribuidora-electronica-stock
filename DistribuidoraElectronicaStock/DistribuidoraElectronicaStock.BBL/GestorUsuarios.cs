@@ -11,24 +11,40 @@ namespace DistribuidoraElectronicaStock.BBL
 {
     public class GestorUsuarios
     {
-        private UsuarioDAL usuarioDAL;
 
-        public GestorUsuarios()
+            private UsuarioDAL usuarioDAL;
+
+            public GestorUsuarios()
+            {
+                usuarioDAL = new UsuarioDAL();
+            }
+
+            public Usuario Autenticar(int dni, string password)
+            {
+                return usuarioDAL.ObtenerPorDniYPassword(dni, password);
+            }
+
+            public bool AgregarUsuario(Usuario usuario)
+            {
+                int filasAfectadas = usuarioDAL.AgregarUsuario(usuario);
+                return filasAfectadas > 0;
+            }
+
+        public List<Usuario> BuscarUsuarios(string nombre = null, string apellido = null,
+                                 int? dni = null, int? rolId = null, int? activo = null)
         {
-            usuarioDAL = new UsuarioDAL();
+            return usuarioDAL.BuscarUsuarios(nombre, apellido, dni, rolId, activo);
         }
 
-        public Usuario Autenticar(int dni, string password)
+        public bool ActualizarUsuario(Usuario usuario)
         {
-            return usuarioDAL.ObtenerPorDniYPassword(dni, password);
+            return new UsuarioDAL().ActualizarUsuario(usuario);
         }
 
-
-        
-        public bool AgregarUsuario(Usuario usuario)
+        public bool EliminarUsuario(int idUsuario)
         {
-            int filasAfectadas = usuarioDAL.AgregarUsuario(usuario);
-            return filasAfectadas > 0;
+            return new UsuarioDAL().EliminarUsuario(idUsuario);
         }
     }
-}
+    }
+
