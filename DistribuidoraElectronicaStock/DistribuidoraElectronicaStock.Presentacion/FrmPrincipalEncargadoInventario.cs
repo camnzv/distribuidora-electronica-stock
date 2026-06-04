@@ -45,5 +45,10 @@ namespace DistribuidoraElectronicaStock.Presentacion
             var frm = new FrmEntradaStock();
             frm.ShowDialog();
         }
+
+        private void FrmPrincipalEncargadoInventario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
