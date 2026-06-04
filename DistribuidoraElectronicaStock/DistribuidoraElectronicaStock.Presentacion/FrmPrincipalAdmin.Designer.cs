@@ -101,7 +101,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(782, 64);
+            this.panel1.Size = new System.Drawing.Size(1043, 64);
             this.panel1.TabIndex = 4;
             // 
             // lblDescripcion
@@ -120,7 +120,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(782, 453);
+            this.ClientSize = new System.Drawing.Size(1043, 558);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCerrarSesion);
