@@ -36,7 +36,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEditarCliente
@@ -46,7 +50,7 @@
             this.btnEditarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnEditarCliente.Location = new System.Drawing.Point(134, 343);
+            this.btnEditarCliente.Location = new System.Drawing.Point(12, 389);
             this.btnEditarCliente.Name = "btnEditarCliente";
             this.btnEditarCliente.Size = new System.Drawing.Size(123, 37);
             this.btnEditarCliente.TabIndex = 3;
@@ -62,7 +66,7 @@
             this.btnDesactivarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesactivarCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesactivarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnDesactivarCliente.Location = new System.Drawing.Point(272, 343);
+            this.btnDesactivarCliente.Location = new System.Drawing.Point(155, 389);
             this.btnDesactivarCliente.Name = "btnDesactivarCliente";
             this.btnDesactivarCliente.Size = new System.Drawing.Size(128, 37);
             this.btnDesactivarCliente.TabIndex = 4;
@@ -78,7 +82,7 @@
             this.btnAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarCliente.Location = new System.Drawing.Point(12, 343);
+            this.btnAgregarCliente.Location = new System.Drawing.Point(318, 389);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
             this.btnAgregarCliente.Size = new System.Drawing.Size(114, 37);
             this.btnAgregarCliente.TabIndex = 8;
@@ -94,7 +98,7 @@
             this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(31, 99);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(155, 144);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(129, 37);
             this.btnBuscarCliente.TabIndex = 9;
@@ -139,7 +143,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(666, 403);
+            this.button1.Location = new System.Drawing.Point(665, 403);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(102, 35);
             this.button1.TabIndex = 11;
@@ -147,11 +151,42 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(242, 100);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(132, 20);
+            this.txtBuscar.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(39, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(197, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Ingrese CUIT o Razon Social del Cliente";
+            // 
+            // dgvClientes
+            // 
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Location = new System.Drawing.Point(35, 204);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.ReadOnly = true;
+            this.dgvClientes.RowHeadersVisible = false;
+            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvClientes.Size = new System.Drawing.Size(339, 150);
+            this.dgvClientes.TabIndex = 14;
+            // 
             // FrmGestionClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvClientes);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menu);
             this.Controls.Add(this.btnBuscarCliente);
@@ -160,9 +195,12 @@
             this.Controls.Add(this.btnEditarCliente);
             this.Name = "FrmGestionClientes";
             this.Text = "FrmGestionClientes";
+            this.Load += new System.EventHandler(this.FrmGestionClientes_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -176,5 +214,8 @@
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgvClientes;
     }
 }
