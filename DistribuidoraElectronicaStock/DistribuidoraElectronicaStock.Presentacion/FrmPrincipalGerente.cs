@@ -22,22 +22,19 @@ namespace DistribuidoraElectronicaStock.Presentacion
             lblRol.Text = $"Perfil: {usuario.Rol.Nombre}";
         }
 
-
-
-        private void btnReporteStock_Click(object sender, EventArgs e)
+        private void btnReporteStock_Click_1(object sender, EventArgs e)
         {
-
             FrmReporteStockGerente frm = new FrmReporteStockGerente();
             frm.ShowDialog();
         }
 
-        private void btnReporteVentas_Click(object sender, EventArgs e)
+        private void btnReporteVentas_Click_1(object sender, EventArgs e)
         {
             FrmReporteVentasGerente frm = new FrmReporteVentasGerente();
             frm.ShowDialog();
         }
 
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        private void btnCerrarSesion_Click_1(object sender, EventArgs e)
         {
             var confirmar = MessageBox.Show("¿Desea cerrar sesión?", "Cerrar sesión",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
