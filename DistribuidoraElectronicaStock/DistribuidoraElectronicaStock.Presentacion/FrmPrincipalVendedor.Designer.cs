@@ -30,16 +30,16 @@
         {
             this.lblRol = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAdministrarClientes = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAdministrarVentas = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.menu = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnAdministrarProductos = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnAdministrarClientes = new System.Windows.Forms.Button();
-            this.btnAdministrarVentas = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menu.SuspendLayout();
@@ -68,6 +68,22 @@
             this.panel1.Size = new System.Drawing.Size(590, 179);
             this.panel1.TabIndex = 3;
             // 
+            // btnAdministrarClientes
+            // 
+            this.btnAdministrarClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnAdministrarClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdministrarClientes.FlatAppearance.BorderSize = 0;
+            this.btnAdministrarClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdministrarClientes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdministrarClientes.ForeColor = System.Drawing.Color.White;
+            this.btnAdministrarClientes.Location = new System.Drawing.Point(15, 75);
+            this.btnAdministrarClientes.Name = "btnAdministrarClientes";
+            this.btnAdministrarClientes.Size = new System.Drawing.Size(155, 37);
+            this.btnAdministrarClientes.TabIndex = 10;
+            this.btnAdministrarClientes.Text = "Administrar Clientes";
+            this.btnAdministrarClientes.UseVisualStyleBackColor = false;
+            this.btnAdministrarClientes.Click += new System.EventHandler(this.btnAdministrarClientes_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -91,6 +107,22 @@
             this.panel2.Size = new System.Drawing.Size(590, 225);
             this.panel2.TabIndex = 4;
             // 
+            // btnAdministrarVentas
+            // 
+            this.btnAdministrarVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnAdministrarVentas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdministrarVentas.FlatAppearance.BorderSize = 0;
+            this.btnAdministrarVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdministrarVentas.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdministrarVentas.ForeColor = System.Drawing.Color.White;
+            this.btnAdministrarVentas.Location = new System.Drawing.Point(18, 97);
+            this.btnAdministrarVentas.Name = "btnAdministrarVentas";
+            this.btnAdministrarVentas.Size = new System.Drawing.Size(129, 43);
+            this.btnAdministrarVentas.TabIndex = 4;
+            this.btnAdministrarVentas.Text = "Administrar Ventas";
+            this.btnAdministrarVentas.UseVisualStyleBackColor = false;
+            this.btnAdministrarVentas.Click += new System.EventHandler(this.btnAdministrarVentas_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -106,9 +138,9 @@
             // 
             this.menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.menu.Controls.Add(this.lblRol);
-            this.menu.Location = new System.Drawing.Point(2, -1);
+            this.menu.Location = new System.Drawing.Point(-1, -1);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(783, 77);
+            this.menu.Size = new System.Drawing.Size(786, 77);
             this.menu.TabIndex = 5;
             // 
             // panel3
@@ -164,44 +196,12 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
-            // btnAdministrarClientes
-            // 
-            this.btnAdministrarClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnAdministrarClientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdministrarClientes.FlatAppearance.BorderSize = 0;
-            this.btnAdministrarClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdministrarClientes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdministrarClientes.ForeColor = System.Drawing.Color.White;
-            this.btnAdministrarClientes.Location = new System.Drawing.Point(15, 75);
-            this.btnAdministrarClientes.Name = "btnAdministrarClientes";
-            this.btnAdministrarClientes.Size = new System.Drawing.Size(155, 37);
-            this.btnAdministrarClientes.TabIndex = 10;
-            this.btnAdministrarClientes.Text = "Administrar Clientes";
-            this.btnAdministrarClientes.UseVisualStyleBackColor = false;
-            this.btnAdministrarClientes.Click += new System.EventHandler(this.btnAdministrarClientes_Click);
-            // 
-            // btnAdministrarVentas
-            // 
-            this.btnAdministrarVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnAdministrarVentas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdministrarVentas.FlatAppearance.BorderSize = 0;
-            this.btnAdministrarVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdministrarVentas.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdministrarVentas.ForeColor = System.Drawing.Color.White;
-            this.btnAdministrarVentas.Location = new System.Drawing.Point(18, 97);
-            this.btnAdministrarVentas.Name = "btnAdministrarVentas";
-            this.btnAdministrarVentas.Size = new System.Drawing.Size(129, 43);
-            this.btnAdministrarVentas.TabIndex = 4;
-            this.btnAdministrarVentas.Text = "Administrar Ventas";
-            this.btnAdministrarVentas.UseVisualStyleBackColor = false;
-            this.btnAdministrarVentas.Click += new System.EventHandler(this.btnAdministrarVentas_Click);
-            // 
             // FrmPrincipalVendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(784, 827);
+            this.ClientSize = new System.Drawing.Size(784, 749);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.menu);
