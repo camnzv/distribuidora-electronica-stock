@@ -33,31 +33,15 @@ namespace DistribuidoraElectronicaStock.Presentacion
            
             txtNombre.KeyDown += (s, e) => { if (e.KeyCode == Keys.Enter) btnBuscar_Click(s, e); };
             txtCodigo.KeyDown += (s, e) => { if (e.KeyCode == Keys.Enter) btnBuscar_Click(s, e); };
+           
+            this.Load += (s, e) =>
+            {
+                txtNombre.Focus();
+                CargarProductos();
+            };
 
-            // Configurar DataGridView — solo lectura
-            dgvProductos.ReadOnly = true;
-            dgvProductos.AllowUserToAddRows = false;
-            dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProductos.MultiSelect = false;
-            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvProductos.RowHeadersVisible = false;
-            dgvProductos.BorderStyle = BorderStyle.None;
 
-            // Estilo header
-            dgvProductos.ColumnHeadersDefaultCellStyle.BackColor =
-                System.Drawing.ColorTranslator.FromHtml("#2C3E50");
-            dgvProductos.ColumnHeadersDefaultCellStyle.ForeColor =
-                System.Drawing.Color.White;
-            dgvProductos.ColumnHeadersDefaultCellStyle.Font =
-                new System.Drawing.Font("Segoe UI", 9, System.Drawing.FontStyle.Bold);
-            dgvProductos.EnableHeadersVisualStyles = false;
-            dgvProductos.AlternatingRowsDefaultCellStyle.BackColor =
-                System.Drawing.ColorTranslator.FromHtml("#F2F3F4");
-
-            // Cargar todos los productos al abrir
-            CargarProductos();
-
-            this.Load += (s, e) => txtNombre.Focus();
+           
         }
 
         private void CargarProductos()
@@ -72,7 +56,7 @@ namespace DistribuidoraElectronicaStock.Presentacion
                 dgvProductos.Rows.Clear();
                 dgvProductos.Columns.Clear();
 
-                // Columna oculta ID
+               
                 dgvProductos.Columns.Add("id_producto", "ID");
                 dgvProductos.Columns["id_producto"].Visible = false;
 
@@ -114,6 +98,8 @@ namespace DistribuidoraElectronicaStock.Presentacion
                 MessageBox.Show($"Error al buscar productos:\n{ex.Message}",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
+
         }
 
      
