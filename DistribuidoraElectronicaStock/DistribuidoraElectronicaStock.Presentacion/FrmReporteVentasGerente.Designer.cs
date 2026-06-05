@@ -37,11 +37,6 @@
             this.rbSemanal = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
-            this.ColFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblRol = new System.Windows.Forms.Label();
@@ -77,6 +72,7 @@
             this.btnFiltrar.TabIndex = 4;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // rbVendedor
             // 
@@ -141,12 +137,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColFecha,
-            this.ColVendedor,
-            this.ColCliente,
-            this.ColProducto,
-            this.ColTotal});
             this.dgvVentas.Location = new System.Drawing.Point(12, 160);
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.ReadOnly = true;
@@ -154,36 +144,6 @@
             this.dgvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVentas.Size = new System.Drawing.Size(860, 320);
             this.dgvVentas.TabIndex = 4;
-            // 
-            // ColFecha
-            // 
-            this.ColFecha.HeaderText = "Fecha";
-            this.ColFecha.Name = "ColFecha";
-            this.ColFecha.ReadOnly = true;
-            // 
-            // ColVendedor
-            // 
-            this.ColVendedor.HeaderText = "Vendedor";
-            this.ColVendedor.Name = "ColVendedor";
-            this.ColVendedor.ReadOnly = true;
-            // 
-            // ColCliente
-            // 
-            this.ColCliente.HeaderText = "Cliente";
-            this.ColCliente.Name = "ColCliente";
-            this.ColCliente.ReadOnly = true;
-            // 
-            // ColProducto
-            // 
-            this.ColProducto.HeaderText = "Producto";
-            this.ColProducto.Name = "ColProducto";
-            this.ColProducto.ReadOnly = true;
-            // 
-            // ColTotal
-            // 
-            this.ColTotal.HeaderText = "Total";
-            this.ColTotal.Name = "ColTotal";
-            this.ColTotal.ReadOnly = true;
             // 
             // btnCerrar
             // 
@@ -244,6 +204,7 @@
             this.Controls.Add(this.pnlFiltros);
             this.Name = "FrmReporteVentasGerente";
             this.Text = "FrmReporteVentasGerente";
+            this.Load += new System.EventHandler(this.FrmReporteVentasGerente_Load_1);
             this.pnlFiltros.ResumeLayout(false);
             this.pnlFiltros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
@@ -262,11 +223,6 @@
         private System.Windows.Forms.RadioButton rbSemanal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvVentas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColVendedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColTotal;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblRol;

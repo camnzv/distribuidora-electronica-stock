@@ -28,19 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlFiltros = new System.Windows.Forms.Panel();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvStock = new System.Windows.Forms.DataGridView();
-            this.ColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColStockActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColStockMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblRol = new System.Windows.Forms.Label();
@@ -74,6 +68,7 @@
             this.btnFiltrar.TabIndex = 2;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // cmbCategoria
             // 
@@ -99,27 +94,20 @@
             // 
             this.dgvStock.AllowUserToAddRows = false;
             this.dgvStock.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
-            this.dgvStock.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            this.dgvStock.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvStock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStock.BackgroundColor = System.Drawing.Color.White;
             this.dgvStock.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColCodigo,
-            this.ColProducto,
-            this.ColStockActual,
-            this.ColStockMinimo,
-            this.ColCategoria,
-            this.ColEstado});
             this.dgvStock.Location = new System.Drawing.Point(12, 154);
             this.dgvStock.Name = "dgvStock";
             this.dgvStock.ReadOnly = true;
@@ -127,46 +115,6 @@
             this.dgvStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStock.Size = new System.Drawing.Size(860, 320);
             this.dgvStock.TabIndex = 9;
-            // 
-            // ColCodigo
-            // 
-            this.ColCodigo.HeaderText = "Codigo";
-            this.ColCodigo.Name = "ColCodigo";
-            this.ColCodigo.ReadOnly = true;
-            // 
-            // ColProducto
-            // 
-            this.ColProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColProducto.HeaderText = "Producto";
-            this.ColProducto.Name = "ColProducto";
-            this.ColProducto.ReadOnly = true;
-            // 
-            // ColStockActual
-            // 
-            this.ColStockActual.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColStockActual.HeaderText = "Stock Actual";
-            this.ColStockActual.Name = "ColStockActual";
-            this.ColStockActual.ReadOnly = true;
-            // 
-            // ColStockMinimo
-            // 
-            this.ColStockMinimo.HeaderText = "Stock Minimo";
-            this.ColStockMinimo.Name = "ColStockMinimo";
-            this.ColStockMinimo.ReadOnly = true;
-            // 
-            // ColCategoria
-            // 
-            this.ColCategoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColCategoria.HeaderText = "Categoria";
-            this.ColCategoria.Name = "ColCategoria";
-            this.ColCategoria.ReadOnly = true;
-            // 
-            // ColEstado
-            // 
-            this.ColEstado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColEstado.HeaderText = "Estado";
-            this.ColEstado.Name = "ColEstado";
-            this.ColEstado.ReadOnly = true;
             // 
             // btnCerrar
             // 
@@ -230,6 +178,7 @@
             this.Name = "FrmReporteStockGerente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Reporte de Stock";
+            this.Load += new System.EventHandler(this.FrmReporteStockGerente_Load);
             this.pnlFiltros.ResumeLayout(false);
             this.pnlFiltros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
@@ -246,12 +195,6 @@
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvStock;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColStockActual;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColStockMinimo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColCategoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColEstado;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblRol;
