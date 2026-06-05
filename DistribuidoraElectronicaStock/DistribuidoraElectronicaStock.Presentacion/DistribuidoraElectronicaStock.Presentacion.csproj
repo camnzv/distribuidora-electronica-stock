@@ -60,6 +60,18 @@
     <Compile Include="FrmAgregarUsuario.Designer.cs">
       <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBuscarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarUsuario.Designer.cs">
+      <DependentUpon>FrmBuscarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEdicionUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEdicionUsuario.Designer.cs">
+      <DependentUpon>FrmEdicionUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEntradaStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +141,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAgregarUsuario.resx">
       <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarUsuario.resx">
+      <DependentUpon>FrmBuscarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEdicionUsuario.resx">
+      <DependentUpon>FrmEdicionUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEntradaStock.resx">
       <DependentUpon>FrmEntradaStock.cs</DependentUpon>
