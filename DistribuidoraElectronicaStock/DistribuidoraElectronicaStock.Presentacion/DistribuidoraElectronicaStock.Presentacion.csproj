@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAgregarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarCliente.Designer.cs">
+      <DependentUpon>FrmAgregarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAgregarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAgregarCliente.resx">
+      <DependentUpon>FrmAgregarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAgregarUsuario.resx">
       <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>

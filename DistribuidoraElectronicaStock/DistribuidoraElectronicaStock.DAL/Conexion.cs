@@ -285,6 +285,7 @@ namespace DistribuidoraElectronicaStock.DAL
 
             return objParametro;
         }
+
         public SqlParameter crearParametro(string pNombre, object pValor)
         {
             SqlParameter objParametro = new SqlParameter();
