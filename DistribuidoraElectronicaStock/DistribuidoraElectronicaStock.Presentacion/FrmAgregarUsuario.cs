@@ -26,14 +26,19 @@ namespace DistribuidoraElectronicaStock.Presentacion
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.StartPosition = FormStartPosition.CenterParent;
-
             txtDni.KeyPress += (s, e) =>
             {
                 if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
                     e.Handled = true;
             };
 
+
             txtPassword.UseSystemPasswordChar = true;
+            txtConfirmarPassword.UseSystemPasswordChar = true;
+            // mensaje para la constraseña,se muestra mientras se van llenando los campos 
+            txtPassword.TextChanged += ValidarCoincidenciaVisual;
+            txtConfirmarPassword.TextChanged += ValidarCoincidenciaVisual;
+
 
             CargarRoles();
 
@@ -66,6 +71,35 @@ namespace DistribuidoraElectronicaStock.Presentacion
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void ValidarCoincidenciaVisual(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtPassword.Text) ||
+                string.IsNullOrEmpty(txtConfirmarPassword.Text))
+            {
+                txtPassword.BackColor = System.Drawing.ColorTranslator.FromHtml("#F2F3F4");
+                txtConfirmarPassword.BackColor = System.Drawing.ColorTranslator.FromHtml("#F2F3F4");
+                lblEstadoPassword.Text = "";
+                lblEstadoPassword.Visible = false;
+                return;
+            }
+
+            if (txtPassword.Text == txtConfirmarPassword.Text)
+            {
+                txtPassword.BackColor = System.Drawing.ColorTranslator.FromHtml("#EAFAF1");
+                txtConfirmarPassword.BackColor = System.Drawing.ColorTranslator.FromHtml("#EAFAF1");
+                lblEstadoPassword.Text = "Las contraseñas coinciden";
+                lblEstadoPassword.ForeColor = System.Drawing.ColorTranslator.FromHtml("#1E8449");
+                lblEstadoPassword.Visible = true;
+            }
+            else
+            {
+                txtPassword.BackColor = System.Drawing.ColorTranslator.FromHtml("#FDEDEC");
+                txtConfirmarPassword.BackColor = System.Drawing.ColorTranslator.FromHtml("#FDEDEC");
+                lblEstadoPassword.Text = "Las contraseñas no coinciden";
+                lblEstadoPassword.ForeColor = System.Drawing.ColorTranslator.FromHtml("#E74C3C");
+                lblEstadoPassword.Visible = true;
+            }
+        }
 
         private bool ValidarCampos()
         {
@@ -89,7 +123,7 @@ namespace DistribuidoraElectronicaStock.Presentacion
             {
                 MessageBox.Show("El DNI es obligatorio.", "Atención",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtDni.Focus();
+                txtConfirmarPassword.Focus();
                 return false;
             }
 
@@ -100,6 +134,23 @@ namespace DistribuidoraElectronicaStock.Presentacion
                 txtPassword.Focus();
                 return false;
             }
+            if (string.IsNullOrWhiteSpace(txtConfirmarPassword.Text))
+            {
+                MessageBox.Show("Debe confirmar la contraseña.", "Atención",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtConfirmarPassword.Focus();
+                return false;
+            }
+            if (txtPassword.Text != txtConfirmarPassword.Text)
+            {
+                MessageBox.Show("Las contraseñas no coinciden.", "Error de validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPassword.Clear();
+                txtConfirmarPassword.Clear();
+                txtPassword.Focus();
+                return false;
+            }
+
 
             return true;
         }
@@ -154,7 +205,7 @@ namespace DistribuidoraElectronicaStock.Presentacion
             }
         }
 
-       
+        
     }
 
 
