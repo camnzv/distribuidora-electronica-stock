@@ -32,8 +32,8 @@ namespace DistribuidoraElectronicaStock.BBL
 
         public bool RegistrarEntrada(OrdenCompra orden, List<OrdenCompraDetalle> detalles, bool esParcial = false)
         {
-            if (!ValidarCantidades(detalles, esParcial))
-                return false;
+            //if (!ValidarCantidades(detalles, esParcial))
+            //    return false;
 
             orden.FechaRecepcion = DateTime.Now;
 

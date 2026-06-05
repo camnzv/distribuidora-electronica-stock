@@ -145,7 +145,10 @@ namespace DistribuidoraElectronicaStock.Presentacion
             else
             {
                 MessageBox.Show("Error al registrar la entrada. Revisá los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CargarOrdenesPendientes();
+                CargarOrdenesParciales();
             }
+            this.Close();
         }
 
         private bool ObtenerYValidarCantidadesPendientes(out List<OrdenCompraDetalle> resultado)
@@ -291,7 +294,10 @@ namespace DistribuidoraElectronicaStock.Presentacion
             else
             {
                 MessageBox.Show("Error al registrar la recepción.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CargarOrdenesPendientes();
+                CargarOrdenesParciales();
             }
+            this.Close();
         }
 
         private bool ObtenerYValidarCantidadesParciales(out List<OrdenCompraDetalle> resultado)
