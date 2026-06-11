@@ -123,7 +123,7 @@ namespace DistribuidoraElectronicaStock.Presentacion
             {
                 MessageBox.Show("El DNI es obligatorio.", "Atención",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtConfirmarPassword.Focus();
+                txtDni.Focus();
                 return false;
             }
 
