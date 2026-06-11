@@ -141,7 +141,17 @@ namespace DistribuidoraElectronicaStock.DAL
                     return filasAfectadas > 0;
         }
 
+        public bool ExisteDni(int dni)
+        {
+            SqlParameter[] parametros =
+            {
+                conexion.crearParametro("@dni", dni)
+            };
 
+            DataTable tabla = conexion.LeerPorStoreProcedure("SP_EXISTE_DNI_USUARIO", parametros);
+
+            return tabla != null && tabla.Rows.Count > 0 && Convert.ToInt32(tabla.Rows[0][0]) > 0;
+        }
 
 
     }

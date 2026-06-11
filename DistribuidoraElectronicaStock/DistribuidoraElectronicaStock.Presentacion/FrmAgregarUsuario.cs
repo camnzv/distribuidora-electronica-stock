@@ -127,6 +127,26 @@ namespace DistribuidoraElectronicaStock.Presentacion
                 return false;
             }
 
+            try
+            {
+                GestorUsuarios gestor = new GestorUsuarios();
+                if (gestor.ExisteDni(int.Parse(txtDni.Text)))
+                {
+                    MessageBox.Show(
+                        $"Ya existe un usuario registrado con el DNI {txtDni.Text}.",
+                        "DNI duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtDni.Focus();
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Error al verificar el DNI:\n{ex.Message}",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
             if (string.IsNullOrWhiteSpace(txtPassword.Text) || txtPassword.Text.Length < 6)
             {
                 MessageBox.Show("La contraseña debe tener al menos 6 caracteres.", "Atención",
