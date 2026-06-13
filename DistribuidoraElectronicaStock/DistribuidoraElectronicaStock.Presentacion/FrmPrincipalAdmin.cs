@@ -27,7 +27,13 @@ namespace DistribuidoraElectronicaStock.Presentacion
 
             // muestra el rol  del usuario que inicio sesion / podria ser el nombre 
             var usuario = GestorSesion.RecuperarInstancia().UsuarioActual;
+            var permisos = GestorSesion.RecuperarInstancia().PermisosActuales;
+
             lblRol.Text = $"Perfil: {usuario.Rol.Nombre}";
+
+
+            btnAgregarUsuario.Enabled = permisos.TienePermiso("AgregarUsuario");
+            btnBuscarUsuario.Visible= permisos.TienePermiso("BuscarUsuario");
         }
 
         private void btnAgregarUsuario_Click(object sender, EventArgs e)
