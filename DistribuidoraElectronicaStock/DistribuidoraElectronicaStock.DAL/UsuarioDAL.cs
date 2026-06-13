@@ -13,7 +13,7 @@ namespace DistribuidoraElectronicaStock.DAL
     {
         private Conexion conexion = new Conexion();
 
-        public Usuario ObtenerPorDniYPassword(int dni, string password)
+        /*public Usuario ObtenerPorDniYPassword(int dni, string password)
         {
             SqlParameter[] parametros =
             {
@@ -46,6 +46,41 @@ namespace DistribuidoraElectronicaStock.DAL
                 Convert.ToInt32(fila["dni"]),
                 rol
             );
+        }*/
+        public Usuario ObtenerPorDniYPassword(int dni, string password)
+        {
+            SqlParameter[] parametros =
+            {
+        conexion.crearParametro("@dni",      dni),
+        conexion.crearParametro("@password", password)
+           };
+
+            DataTable tabla = conexion.LeerPorStoreProcedure("SP_LOGIN_USUARIO", parametros);
+
+            if (tabla == null || tabla.Rows.Count == 0)
+                return null;
+
+            DataRow fila = tabla.Rows[0];
+
+            Rol rol = new Rol(
+                Convert.ToInt32(fila["rol_id"]),
+                fila["nombreRol"].ToString(),
+                fila["descripcion"].ToString()
+            );
+
+            Usuario usuario = new Usuario(
+                Convert.ToInt32(fila["id_usuario"]),
+                fila["nombre"].ToString(),
+                fila["apellido"].ToString(),
+                fila["email"].ToString(),
+                fila["password"].ToString(),
+                Convert.ToInt32(fila["dni"]),
+                rol
+            );
+
+            usuario.Activo = Convert.ToInt32(fila["activo"]) == 1; 
+
+            return usuario;
         }
 
         public int AgregarUsuario(Usuario usuario)
