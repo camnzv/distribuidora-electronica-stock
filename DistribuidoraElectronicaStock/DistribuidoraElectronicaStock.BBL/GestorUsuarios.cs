@@ -45,6 +45,11 @@ namespace DistribuidoraElectronicaStock.BBL
         {
             return new UsuarioDAL().EliminarUsuario(idUsuario);
         }
+
+        public bool ExisteDni(int dni)
+        {
+            return usuarioDAL.ExisteDni(dni);
+        }
     }
     }
 

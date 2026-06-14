@@ -1,4 +1,5 @@
-﻿using DistribuidoraElectronicaStock.Entidades;
+﻿using DistribuidoraElectronicaStock.DAL;
+using DistribuidoraElectronicaStock.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,12 @@ namespace DistribuidoraElectronicaStock.BBL
 {
     public class GestorProductos
     {
-        public List<Producto> ObtenerProductos()
+        private ProductoDAL _productoDAL = new ProductoDAL();
+
+        public List<Producto> BuscarProductos(string nombre = null, string codigo = null,
+                                               int? categoria = null, int? activo = null)
         {
-            return new List<Producto>();
+            return _productoDAL.BuscarProductos(nombre, codigo, categoria, activo);
         }
     }
 }

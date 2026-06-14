@@ -27,7 +27,7 @@ namespace DistribuidoraElectronicaStock.Presentacion
                 .RecuperarInstancia()
                 .UsuarioActual;
 
-            lblRol.Text = $"Perfil: {usuario.Rol.Nombre}";
+            lblRol.Text = $"{usuario.Rol.Nombre}";
         }
 
 
@@ -74,6 +74,6 @@ namespace DistribuidoraElectronicaStock.Presentacion
             }
         }
 
-      
+        
     }
 }

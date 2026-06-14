@@ -89,7 +89,7 @@
             this.lblRol.AutoSize = true;
             this.lblRol.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRol.ForeColor = System.Drawing.Color.White;
-            this.lblRol.Location = new System.Drawing.Point(507, 19);
+            this.lblRol.Location = new System.Drawing.Point(801, 21);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(0, 28);
             this.lblRol.TabIndex = 3;

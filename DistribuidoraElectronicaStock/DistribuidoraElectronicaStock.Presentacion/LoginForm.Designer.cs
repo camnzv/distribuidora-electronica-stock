@@ -145,7 +145,7 @@
             this.Controls.Add(this.lblDni);
             this.Name = "LoginForm";
             this.Text = "Distribuidora Hardware";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
+            
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
