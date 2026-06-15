@@ -61,6 +61,46 @@ namespace DistribuidoraElectronicaStock.DAL
 
             return productos;
         }
+
+
+        public List<Producto> ObtenerBajoStock()
+        {
+            DataTable tabla = _conexion.LeerPorStoreProcedure("SP_OBTENER_PRODUCTOS_BAJO_STOCK");
+            return ParsearProductos(tabla);
+        }
+
+        private List<Producto> ParsearProductos(DataTable tabla)
+        {
+            var lista = new List<Producto>();
+            if (tabla == null) return lista;
+
+            foreach (DataRow fila in tabla.Rows)
+            {
+                var categoria = new CategoriaProducto(
+                    Convert.ToInt32(fila["id_categoria_producto"]),
+                    fila["categoria"].ToString()
+                );
+
+                var producto = new Producto(
+                    Convert.ToInt32(fila["id_producto"]),
+                    categoria,
+                    fila["nombre"].ToString(),
+                    Convert.ToDecimal(fila["precio_compra"]),
+                    Convert.ToDecimal(fila["precio_venta"]),
+                    Convert.ToSingle(fila["iva"]),
+                    Convert.ToInt32(fila["stock_actual"]),
+                    Convert.ToInt32(fila["stock_minimo"]),
+                    fila["codigo"].ToString(),
+                    Convert.ToInt32(fila["activo"]) == 1
+                );
+
+                lista.Add(producto);
+            }
+
+            return lista;
+        }
+
+
     }
 
 }

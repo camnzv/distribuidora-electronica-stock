@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlertaBajoStockLogger.cs" />
     <Compile Include="GestorOrdenCompra.cs" />
     <Compile Include="GestorPermisos.cs" />
     <Compile Include="GestorProductos.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="GestorClientes.cs" />
     <Compile Include="GestorSesion.cs" />
     <Compile Include="GestorUsuarios.cs" />
+    <Compile Include="IObservadorStock.cs" />
     <Compile Include="Permisos\GrupoPermisos.cs" />
     <Compile Include="Permisos\IComponentePermiso.cs" />
     <Compile Include="Permisos\Permiso.cs" />

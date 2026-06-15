@@ -179,6 +179,7 @@
             this.btnVisualizarBajoStock.TabIndex = 8;
             this.btnVisualizarBajoStock.Text = "Ver Bajo Stock";
             this.btnVisualizarBajoStock.UseVisualStyleBackColor = false;
+            this.btnVisualizarBajoStock.Click += new System.EventHandler(this.btnVisualizarBajoStock_Click);
             // 
             // btnCerrarSesion
             // 
