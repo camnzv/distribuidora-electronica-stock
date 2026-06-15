@@ -132,6 +132,12 @@
     <Compile Include="FrmReporteVentasGerente.Designer.cs">
       <DependentUpon>FrmReporteVentasGerente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVisualizarBajoStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVisualizarBajoStock.Designer.cs">
+      <DependentUpon>FrmVisualizarBajoStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReporteVentasGerente.resx">
       <DependentUpon>FrmReporteVentasGerente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVisualizarBajoStock.resx">
+      <DependentUpon>FrmVisualizarBajoStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
