@@ -110,26 +110,36 @@ namespace DistribuidoraElectronicaStock.Presentacion
             }
 
             GestorSesion sesion = GestorSesion.RecuperarInstancia();
+            ResultadoLogin resultado = sesion.IniciarSesion(dni, txtPassword.Text);
 
-            if (sesion.IniciarSesion(dni, txtPassword.Text))
+
+            switch (resultado)
             {
-                this.Hide();
-                AbrirFormularioPorRol(sesion.UsuarioActual);
-            }
-            else
-            {
-                MessageBox.Show("DNI o contraseña incorrectos.", "Acceso denegado",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtPassword.Clear();
-                txtPassword.Focus();
-            }
-        
-    }
+                case ResultadoLogin.Exitoso:
+                    this.Hide();
+                    AbrirFormularioPorRol(sesion.UsuarioActual);
+                    break;
 
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
+                case ResultadoLogin.UsuarioInactivo:
+                    MessageBox.Show(
+                        "Su usuario se encuentra inactivo.\nContáctese con el administrador del sistema.",
+                        "Acceso denegado",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPassword.Clear();
+                    txtDni.Clear();
+                    txtDni.Focus();
+                    break;
 
+                case ResultadoLogin.CredencialesInvalidas:
+                    MessageBox.Show("DNI o contraseña incorrectos.", "Acceso denegado",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPassword.Clear();
+                    txtPassword.Focus();
+                    break;
+            }
         }
+
+      
     }
 
 

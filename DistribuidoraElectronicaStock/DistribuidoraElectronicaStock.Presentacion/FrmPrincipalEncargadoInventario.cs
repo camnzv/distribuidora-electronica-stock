@@ -45,5 +45,32 @@ namespace DistribuidoraElectronicaStock.Presentacion
             var frm = new FrmEntradaStock();
             frm.ShowDialog();
         }
+
+        private void FrmPrincipalEncargadoInventario_Load(object sender, EventArgs e)
+        {   //OBSERVER
+            var gestorProductos = new GestorProductos();
+            var logger = new AlertaBajoStockLogger();
+
+            gestorProductos.SuscribirObservador(logger);
+            gestorProductos.ObtenerProductosBajoStock();
+
+            var alertas = logger.ObtenerAlertas();
+            if (alertas.Count > 0)
+            {
+                MessageBox.Show(
+                    $"Se detectaron {alertas.Count} producto(s) con stock bajo el mínimo.\n" +
+                    "Revisá la sección 'Ver Bajo Stock'.",
+                    "Alerta de stock",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnVisualizarBajoStock_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmVisualizarBajoStock();
+            frm.ShowDialog();
+        }
     }
+  
 }

@@ -41,12 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlertaBajoStockLogger.cs" />
     <Compile Include="GestorOrdenCompra.cs" />
+    <Compile Include="GestorPermisos.cs" />
     <Compile Include="GestorProductos.cs" />
+    <Compile Include="GestorReporteStock.cs" />
+    <Compile Include="GestorReporteVentas.cs" />
+    <Compile Include="GestorRoles.cs" />
     <Compile Include="GestorVentas.cs" />
     <Compile Include="GestorClientes.cs" />
     <Compile Include="GestorSesion.cs" />
     <Compile Include="GestorUsuarios.cs" />
+    <Compile Include="IObservadorStock.cs" />
+    <Compile Include="Permisos\GrupoPermisos.cs" />
+    <Compile Include="Permisos\IComponentePermiso.cs" />
+    <Compile Include="Permisos\Permiso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -59,5 +68,6 @@
       <Name>DistribuidoraElectronicaStock.Entidades</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

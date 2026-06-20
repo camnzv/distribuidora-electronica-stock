@@ -33,7 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,6 +48,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAgregarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarCliente.Designer.cs">
+      <DependentUpon>FrmAgregarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAgregarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarUsuario.Designer.cs">
+      <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarUsuario.Designer.cs">
+      <DependentUpon>FrmBuscarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEdicionUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEdicionUsuario.Designer.cs">
+      <DependentUpon>FrmEdicionUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEntradaStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,11 +123,21 @@
     <Compile Include="FrmReporteStockGerente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmReporteStockGerente.Designer.cs" />
+    <Compile Include="FrmReporteStockGerente.Designer.cs">
+      <DependentUpon>FrmReporteStockGerente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmReporteVentasGerente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmReporteVentasGerente.Designer.cs" />
+    <Compile Include="FrmReporteVentasGerente.Designer.cs">
+      <DependentUpon>FrmReporteVentasGerente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVisualizarBajoStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVisualizarBajoStock.Designer.cs">
+      <DependentUpon>FrmVisualizarBajoStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +146,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAgregarCliente.resx">
+      <DependentUpon>FrmAgregarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarUsuario.resx">
+      <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarUsuario.resx">
+      <DependentUpon>FrmBuscarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEdicionUsuario.resx">
+      <DependentUpon>FrmEdicionUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmEntradaStock.resx">
       <DependentUpon>FrmEntradaStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,8 +182,15 @@
     <EmbeddedResource Include="FrmPrincipalVendedor.resx">
       <DependentUpon>FrmPrincipalVendedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmReporteStockGerente.resx" />
-    <EmbeddedResource Include="FrmReporteVentasGerente.resx" />
+    <EmbeddedResource Include="FrmReporteStockGerente.resx">
+      <DependentUpon>FrmReporteStockGerente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteVentasGerente.resx">
+      <DependentUpon>FrmReporteVentasGerente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVisualizarBajoStock.resx">
+      <DependentUpon>FrmVisualizarBajoStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

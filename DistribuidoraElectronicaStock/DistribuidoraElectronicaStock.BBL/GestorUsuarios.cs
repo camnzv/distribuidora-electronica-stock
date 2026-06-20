@@ -1,46 +1,55 @@
-﻿using System;
+﻿using DistribuidoraElectronicaStock.DAL;
+using DistribuidoraElectronicaStock.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DistribuidoraElectronicaStock.Entidades;
 
 
 namespace DistribuidoraElectronicaStock.BBL
 {
     public class GestorUsuarios
     {
-        /// <summary>
-        /// devuelve a los usuarios hardcodeados por ahora
-        /// </summary>
-        private List<Usuario> RecuperarUsuariosMock()   // luego  en lugar de esto se va llamar a una clase en DAL que se conecte a la bd 
-        {
-            var rolAdmin = new Rol(1, "Administrador", "Gestión de usuarios");
-            var rolVendedor = new Rol(2, "Vendedor", "Ventas y clientes");
-            var rolStock = new Rol(3, "Encargado de Inventario", "Inventario y logística");
-            var rolGerente = new Rol(4, "Gerente", "Reportes y estadísticas");
 
-            return new List<Usuario>
+            private UsuarioDAL usuarioDAL;
+
+            public GestorUsuarios()
             {
-                new Usuario(1, "Admin",  "Sistema",   "admin@distri.com",  "admin123", 11111111, rolAdmin),
-                new Usuario(2, "Juan",   "Pérez",     "jperez@distri.com", "pass456",  22222222, rolVendedor),
-                new Usuario(3, "María",  "González",  "mgl@distri.com",    "pass789",  33333333, rolStock),
-                new Usuario(4, "Carlos", "Rodríguez", "crod@distri.com",   "gerente1", 44444444, rolGerente),
-            };
+                usuarioDAL = new UsuarioDAL();
+            }
+
+            public Usuario Autenticar(int dni, string password)
+            {
+                return usuarioDAL.ObtenerPorDniYPassword(dni, password);
+            }
+
+            public bool AgregarUsuario(Usuario usuario)
+            {
+                int filasAfectadas = usuarioDAL.AgregarUsuario(usuario);
+                return filasAfectadas > 0;
+            }
+
+        public List<Usuario> BuscarUsuarios(string nombre = null, string apellido = null,
+                                 int? dni = null, int? rolId = null, int? activo = null)
+        {
+            return usuarioDAL.BuscarUsuarios(nombre, apellido, dni, rolId, activo);
         }
 
-        /// <summary>
-        /// busca al uusuario por dni y contraseña
-        /// se devuelve null si las credenciales de inicio son erroreneas o  el usuario no esta activo
-        /// </summary>
-        public Usuario Autenticar(int dni, string password)
+        public bool ActualizarUsuario(Usuario usuario)
         {
-            List<Usuario> usuarios = RecuperarUsuariosMock();
+            return new UsuarioDAL().ActualizarUsuario(usuario);
+        }
 
-            return usuarios.Find(u =>
-                u.Dni == dni &&
-                u.Password == password &&
-                u.Activo);
+        public bool EliminarUsuario(int idUsuario)
+        {
+            return new UsuarioDAL().EliminarUsuario(idUsuario);
+        }
+
+        public bool ExisteDni(int dni)
+        {
+            return usuarioDAL.ExisteDni(dni);
         }
     }
-}
+    }
+
