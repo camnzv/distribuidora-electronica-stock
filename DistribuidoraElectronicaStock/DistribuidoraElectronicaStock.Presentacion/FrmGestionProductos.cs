@@ -30,10 +30,25 @@ namespace DistribuidoraElectronicaStock.Presentacion
             this.MaximizeBox = false;
             this.StartPosition = FormStartPosition.CenterScreen;
 
-           
+
             txtNombre.KeyDown += (s, e) => { if (e.KeyCode == Keys.Enter) btnBuscar_Click(s, e); };
             txtCodigo.KeyDown += (s, e) => { if (e.KeyCode == Keys.Enter) btnBuscar_Click(s, e); };
-           
+
+            AplicarPermisos();
+
+            dgvProductos.SelectionChanged += (s, e) =>
+            {
+                bool haySeleccion = dgvProductos.SelectedRows.Count > 0;
+                var permisos = GestorSesion.RecuperarInstancia().PermisosActuales;
+
+                btnEditar.Enabled =
+                    haySeleccion && permisos.TienePermiso("EditarProducto");
+
+                btnEliminar.Enabled =
+                    haySeleccion && permisos.TienePermiso("EliminarProducto");
+            };
+
+
             this.Load += (s, e) =>
             {
                 txtNombre.Focus();
@@ -41,7 +56,6 @@ namespace DistribuidoraElectronicaStock.Presentacion
             };
 
 
-           
         }
 
         private void CargarProductos()
@@ -56,7 +70,7 @@ namespace DistribuidoraElectronicaStock.Presentacion
                 dgvProductos.Rows.Clear();
                 dgvProductos.Columns.Clear();
 
-               
+
                 dgvProductos.Columns.Add("id_producto", "ID");
                 dgvProductos.Columns["id_producto"].Visible = false;
 
@@ -98,15 +112,29 @@ namespace DistribuidoraElectronicaStock.Presentacion
                 MessageBox.Show($"Error al buscar productos:\n{ex.Message}",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
 
         }
 
-     
 
-  
 
-     
+
+        private void AplicarPermisos()
+        {
+            var permisos = GestorSesion.RecuperarInstancia().PermisosActuales;
+
+            btnAgregarProducto.Visible = permisos.TienePermiso("AgregarProducto");
+
+            // Si no tiene el permiso no se muestran los botones 
+            btnEditar.Visible = permisos.TienePermiso("EditarProducto");
+            btnEliminar.Visible = permisos.TienePermiso("EliminarProducto");
+
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+        }
+
+
+
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -125,9 +153,74 @@ namespace DistribuidoraElectronicaStock.Presentacion
         {
             this.Close();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvProductos.SelectedRows.Count == 0) return;
+
+            int id = Convert.ToInt32(dgvProductos.SelectedRows[0].Cells["id_producto"].Value);
+            Producto producto = _productos.Find(p => p.IdProducto == id);
+
+            var confirmar = MessageBox.Show(
+                $"¿Está seguro que desea eliminar {producto.Nombre}?",
+                "Confirmar eliminación",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (confirmar == DialogResult.Yes)
+            {
+                try
+                {
+                    bool eliminado = new GestorProductos().EliminarProducto(id);
+
+                    if (eliminado)
+                    {
+                        MessageBox.Show(
+                            "Producto eliminado correctamente.",
+                            "Éxito",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+
+                        CargarProductos();
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "No se pudo eliminar el producto.",
+                            "Atención",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        $"Error al eliminar el producto:\n{ex.Message}",
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmAgregarProducto();
+            frm.FormClosed += (s, args) => CargarProductos();
+            frm.ShowDialog();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (dgvProductos.SelectedRows.Count == 0) return;
+
+            int id = Convert.ToInt32(dgvProductos.SelectedRows[0].Cells["id_producto"].Value);
+            Producto producto = _productos.Find(p => p.IdProducto == id);
+
+            var frm = new FrmAgregarProducto(producto); 
+            frm.FormClosed += (s, args) => CargarProductos();
+            frm.ShowDialog();
+        }
     }
-
-
-
 }
 
