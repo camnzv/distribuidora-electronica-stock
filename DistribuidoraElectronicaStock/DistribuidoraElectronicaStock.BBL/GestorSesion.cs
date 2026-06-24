@@ -1,4 +1,5 @@
-﻿using DistribuidoraElectronicaStock.BBL.Permisos;
+﻿using DistribuidoraElectronicaStock.BBL.Helpers;
+using DistribuidoraElectronicaStock.BBL.Permisos;
 using DistribuidoraElectronicaStock.Entidades;
 using System;
 using System.Collections.Generic;
@@ -52,8 +53,11 @@ namespace DistribuidoraElectronicaStock.BBL
         /// </summary>
         public ResultadoLogin IniciarSesion(int dni, string password)
         {
+            // Hashea la contraseña  antes de comparar 
+            string passwordHash = PasswordHelper.HashPassword(password);
+
             var gestor = new GestorUsuarios();
-            Usuario usuario = gestor.Autenticar(dni, password);
+            Usuario usuario = gestor.Autenticar(dni, passwordHash); 
 
             if (usuario == null)
                 return ResultadoLogin.CredencialesInvalidas;
@@ -62,8 +66,6 @@ namespace DistribuidoraElectronicaStock.BBL
                 return ResultadoLogin.UsuarioInactivo;
 
             _usuarioActual = usuario;
-
-            // Construye el arbol de permisos con Composite desde los permios de la base de datos 
             _permisosActuales = new GestorPermisos()
                 .RecuperarPermisosPorRol(usuario.Rol.IdRol);
 

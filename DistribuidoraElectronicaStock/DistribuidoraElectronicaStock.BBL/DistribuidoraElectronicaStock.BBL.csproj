@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlertaBajoStockLogger.cs" />
+    <Compile Include="Factories\UsuarioFactory.cs" />
     <Compile Include="GestorCategorias.cs" />
     <Compile Include="GestorOrdenCompra.cs" />
     <Compile Include="GestorPermisos.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="GestorClientes.cs" />
     <Compile Include="GestorSesion.cs" />
     <Compile Include="GestorUsuarios.cs" />
+    <Compile Include="Helpers\PasswordHelper.cs" />
     <Compile Include="IObservadorStock.cs" />
     <Compile Include="Permisos\GrupoPermisos.cs" />
     <Compile Include="Permisos\IComponentePermiso.cs" />

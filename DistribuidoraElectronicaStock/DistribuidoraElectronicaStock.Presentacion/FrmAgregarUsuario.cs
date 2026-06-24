@@ -1,4 +1,5 @@
 ﻿using DistribuidoraElectronicaStock.BBL;
+using DistribuidoraElectronicaStock.BBL.Factories;
 using DistribuidoraElectronicaStock.Entidades;
 using System;
 using System.Collections.Generic;
@@ -188,15 +189,14 @@ namespace DistribuidoraElectronicaStock.Presentacion
 
             Rol rolSeleccionado = (Rol)cmbRol.SelectedItem;
 
-            Usuario nuevoUsuario = new Usuario(
-                0,
-                txtNombre.Text.Trim(),
-                txtApellido.Text.Trim(),
-                txtEmail.Text.Trim(),
-                txtPassword.Text,
-                int.Parse(txtDni.Text),
-                rolSeleccionado
-            );
+            Usuario nuevoUsuario = UsuarioFactory.CrearUsuario(
+             txtNombre.Text,
+             txtApellido.Text,
+             txtEmail.Text,
+             txtPassword.Text,        // hasheado con el factory
+             int.Parse(txtDni.Text),
+             rolSeleccionado
+         );
 
             try
             {
