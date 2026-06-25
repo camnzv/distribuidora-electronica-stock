@@ -77,6 +77,12 @@ namespace DistribuidoraElectronicaStock.Presentacion
             Form formulario = new FrmGestionProductos();
             formulario.Show();
         }
+
+        private void btnGestionProveedores_Click(object sender, EventArgs e)
+        {
+            FrmGestionProveedores frm = new FrmGestionProveedores();
+            frm.ShowDialog();
+        }
     }
   
 }
