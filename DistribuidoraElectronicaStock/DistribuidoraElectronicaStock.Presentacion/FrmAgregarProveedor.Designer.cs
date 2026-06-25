@@ -80,17 +80,18 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(263, 88);
+            this.label5.Location = new System.Drawing.Point(165, 87);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(225, 25);
+            this.label5.Size = new System.Drawing.Size(172, 25);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Agregar un nuevo cliente";
+            this.label5.Text = "Agregar Proveedor";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txtCuit
             // 
             this.txtCuit.Location = new System.Drawing.Point(207, 168);
             this.txtCuit.Name = "txtCuit";
-            this.txtCuit.Size = new System.Drawing.Size(100, 20);
+            this.txtCuit.Size = new System.Drawing.Size(130, 20);
             this.txtCuit.TabIndex = 15;
             // 
             // label1
@@ -106,7 +107,7 @@
             // 
             this.txtRazonSocial.Location = new System.Drawing.Point(457, 164);
             this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(100, 20);
+            this.txtRazonSocial.Size = new System.Drawing.Size(132, 20);
             this.txtRazonSocial.TabIndex = 17;
             // 
             // label2
@@ -122,7 +123,7 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(207, 235);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.Size = new System.Drawing.Size(130, 20);
             this.txtEmail.TabIndex = 19;
             // 
             // label3
@@ -138,7 +139,7 @@
             // 
             this.txtTelefono.Location = new System.Drawing.Point(457, 235);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono.Size = new System.Drawing.Size(132, 20);
             this.txtTelefono.TabIndex = 21;
             // 
             // label4
@@ -165,7 +166,7 @@
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Location = new System.Drawing.Point(309, 307);
             this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipo.Size = new System.Drawing.Size(248, 21);
             this.cmbTipo.TabIndex = 23;
             // 
             // btnCancelar
