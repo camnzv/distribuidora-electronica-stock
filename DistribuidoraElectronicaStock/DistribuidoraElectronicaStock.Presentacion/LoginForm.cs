@@ -1,4 +1,5 @@
 ﻿using DistribuidoraElectronicaStock.BBL;
+using DistribuidoraElectronicaStock.BBL.Excepciones;
 using DistribuidoraElectronicaStock.Entidades;
 using System;
 using System.Collections.Generic;
@@ -91,7 +92,7 @@ namespace DistribuidoraElectronicaStock.Presentacion
         private void btnIngresar_Click(object sender, EventArgs e)
         {
 
-            // validacion de campos completados
+            // Validación de campos completados
             if (string.IsNullOrEmpty(txtDni.Text) || string.IsNullOrEmpty(txtPassword.Text))
             {
                 MessageBox.Show("Por favor ingrese DNI y contraseña.", "Atención",
@@ -99,7 +100,7 @@ namespace DistribuidoraElectronicaStock.Presentacion
                 return;
             }
 
-            // validacion dni numerico
+            // Validación DNI numérico
             if (!int.TryParse(txtDni.Text, out int dni))
             {
                 MessageBox.Show("El DNI debe contener solo números.", "Error",
@@ -109,33 +110,33 @@ namespace DistribuidoraElectronicaStock.Presentacion
                 return;
             }
 
-            GestorSesion sesion = GestorSesion.RecuperarInstancia();
-            ResultadoLogin resultado = sesion.IniciarSesion(dni, txtPassword.Text);
-
-
-            switch (resultado)
+            try
             {
-                case ResultadoLogin.Exitoso:
-                    this.Hide();
-                    AbrirFormularioPorRol(sesion.UsuarioActual);
-                    break;
+                GestorSesion sesion = GestorSesion.RecuperarInstancia();
+                sesion.IniciarSesion(dni, txtPassword.Text);
 
-                case ResultadoLogin.UsuarioInactivo:
-                    MessageBox.Show(
-                        "Su usuario se encuentra inactivo.\nContáctese con el administrador del sistema.",
-                        "Acceso denegado",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtPassword.Clear();
-                    txtDni.Clear();
-                    txtDni.Focus();
-                    break;
-
-                case ResultadoLogin.CredencialesInvalidas:
-                    MessageBox.Show("DNI o contraseña incorrectos.", "Acceso denegado",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtPassword.Clear();
-                    txtPassword.Focus();
-                    break;
+                this.Hide();
+                AbrirFormularioPorRol(sesion.UsuarioActual);
+            }
+            catch (CredencialesInvalidasException ex)
+            {
+                MessageBox.Show(ex.Message, "Acceso denegado",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPassword.Clear();
+                txtPassword.Focus();
+            }
+            catch (UsuarioInactivoException ex)
+            {
+                MessageBox.Show(ex.Message, "Acceso denegado",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPassword.Clear();
+                txtDni.Clear();
+                txtDni.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error inesperado: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlertaBajoStockLogger.cs" />
+    <Compile Include="Excepciones\CredencialesInvalidasException.cs" />
+    <Compile Include="Excepciones\UsuarioInactivoException.cs" />
     <Compile Include="Factories\UsuarioFactory.cs" />
     <Compile Include="GestorCategorias.cs" />
     <Compile Include="GestorOrdenCompra.cs" />
