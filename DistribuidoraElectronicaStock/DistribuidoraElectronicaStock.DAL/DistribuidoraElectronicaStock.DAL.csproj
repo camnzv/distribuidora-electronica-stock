@@ -52,6 +52,7 @@
     <Compile Include="ReporteVentasDAL.cs" />
     <Compile Include="RolDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
+    <Compile Include="VentaDal.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DistribuidoraElectronicaStock.Entidades\DistribuidoraElectronicaStock.Entidades.csproj">
