@@ -20,6 +20,38 @@ namespace DistribuidoraElectronicaStock.BBL
             return _productoDAL.BuscarProductos(nombre, codigo, categoria, activo);
         }
 
+             public bool AgregarProducto(Producto producto)
+        {
+            int filasAfectadas = _productoDAL.AgregarProducto(producto);
+
+            if (filasAfectadas > 0)
+            {
+                NotificarSiCorresponde(producto);
+                return true;
+            }
+            return false;
+        }
+
+        public bool EditarProducto(Producto producto)
+        {
+            int filasAfectadas = _productoDAL.EditarProducto(producto);
+
+            if (filasAfectadas > 0)
+            {
+                NotificarSiCorresponde(producto);
+                return true;
+            }
+            return false;
+        }
+
+        public bool EliminarProducto(int idProducto)
+        {
+            int filasAfectadas = _productoDAL.EliminarProducto(idProducto);
+            return filasAfectadas > 0;
+        }
+
+
+
         //Gestion de observadores
         public void SuscribirObservador(IObservadorStock observador) => _observadores.Add(observador);
 

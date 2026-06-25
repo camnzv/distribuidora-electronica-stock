@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAgregarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarProducto.Designer.cs">
+      <DependentUpon>FormAgregarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmConfirmarVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,12 @@
     </Compile>
     <Compile Include="FrmAgregarCliente.Designer.cs">
       <DependentUpon>FrmAgregarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAgregarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarProveedor.Designer.cs">
+      <DependentUpon>FrmAgregarProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAgregarUsuario.cs">
       <SubType>Form</SubType>
@@ -95,6 +107,12 @@
     </Compile>
     <Compile Include="FrmGestionProductos.Designer.cs">
       <DependentUpon>FrmGestionProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionProveedores.Designer.cs">
+      <DependentUpon>FrmGestionProveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmGestionVentas.cs">
       <SubType>Form</SubType>
@@ -158,8 +176,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAgregarProducto.resx">
+      <DependentUpon>FormAgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAgregarCliente.resx">
       <DependentUpon>FrmAgregarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarProveedor.resx">
+      <DependentUpon>FrmAgregarProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAgregarUsuario.resx">
       <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
@@ -181,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionProductos.resx">
       <DependentUpon>FrmGestionProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionProveedores.resx">
+      <DependentUpon>FrmGestionProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionVentas.resx">
       <DependentUpon>FrmGestionVentas.cs</DependentUpon>

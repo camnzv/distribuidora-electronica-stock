@@ -34,8 +34,8 @@
             this.txtDni = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTitulo = new System.Windows.Forms.Label();
             this.lblSubtitulo = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,17 +109,6 @@
             this.panel1.Size = new System.Drawing.Size(402, 130);
             this.panel1.TabIndex = 3;
             // 
-            // lblTitulo
-            // 
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(12, 24);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(380, 40);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = " Distribuidora Hardware";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lblSubtitulo
             // 
             this.lblSubtitulo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -130,6 +119,17 @@
             this.lblSubtitulo.TabIndex = 1;
             this.lblSubtitulo.Text = "Sistema de gestión de stock y ventas";
             this.lblSubtitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.White;
+            this.lblTitulo.Location = new System.Drawing.Point(12, 24);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(380, 40);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = " Distribuidora Hardware";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LoginForm
             // 
@@ -145,7 +145,7 @@
             this.Controls.Add(this.lblDni);
             this.Name = "LoginForm";
             this.Text = "Distribuidora Hardware";
-            
+          
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

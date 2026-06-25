@@ -100,6 +100,52 @@ namespace DistribuidoraElectronicaStock.DAL
             return lista;
         }
 
+        public int AgregarProducto(Producto producto)
+        {
+            SqlParameter[] parametros =
+            {
+        _conexion.crearParametro("@categoria_producto_id", producto.CategoriaProducto.IdCategoriaProducto),
+        _conexion.crearParametro("@nombre",        producto.Nombre),
+        _conexion.crearParametro("@precio_compra", producto.PrecioCompra),
+        _conexion.crearParametro("@precio_venta",  producto.PrecioVenta),
+        _conexion.crearParametro("@iva",           (double)producto.Iva),
+        _conexion.crearParametro("@stock_actual",  producto.StockActual),
+        _conexion.crearParametro("@stock_minimo",  producto.StockMinimo),
+        _conexion.crearParametro("@codigo",        producto.Codigo),
+        _conexion.crearParametro("@activo",        1)
+    };
+
+            return _conexion.EscribirPorStoreProcedure("SP_AGREGAR_PRODUCTO", parametros);
+        }
+
+        public int EditarProducto(Producto producto)
+        {
+            SqlParameter[] parametros =
+            {
+        _conexion.crearParametro("@id_producto",   producto.IdProducto),
+        _conexion.crearParametro("@categoria_producto_id", producto.CategoriaProducto.IdCategoriaProducto),
+        _conexion.crearParametro("@nombre",        producto.Nombre),
+        _conexion.crearParametro("@precio_compra", producto.PrecioCompra),
+        _conexion.crearParametro("@precio_venta",  producto.PrecioVenta),
+        _conexion.crearParametro("@iva",           (double)producto.Iva),
+        _conexion.crearParametro("@stock_actual",  producto.StockActual),
+        _conexion.crearParametro("@stock_minimo",  producto.StockMinimo),
+        _conexion.crearParametro("@codigo",        producto.Codigo)
+    };
+
+            return _conexion.EscribirPorStoreProcedure("SP_EDITAR_PRODUCTO", parametros);
+        }
+
+        public int EliminarProducto(int idProducto)
+        {
+            SqlParameter[] parametros =
+            {
+        _conexion.crearParametro("@id_producto", idProducto)
+    };
+
+            return _conexion.EscribirPorStoreProcedure("SP_ELIMINAR_PRODUCTO", parametros);
+        }
+
 
     }
 
