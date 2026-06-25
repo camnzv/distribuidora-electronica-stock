@@ -6,52 +6,28 @@ using System.Threading.Tasks;
 
 namespace DistribuidoraElectronicaStock.Entidades
 {
-    public enum EstadoOrdenCompra  //internamente es un entero 0,1,2
+    public enum EstadoOrdenCompra
     {
         Pendiente,
         Parcial,
         Completada
     }
-    //if (orden.Estado == EstadoOrdenCompra.Pendiente) { mostrar la orden }
-    
 
-    public class OrdenCompra
+    public class OrdenCompra : DocumentoComercial
     {
-        private int _idOrdenCompra;
+        //Atributos propios de OrdenCompra
         private Proveedor _proveedor;
-        private Usuario _usuario;
-        private decimal _montoTotal;
-        private DateTime _fechaEmision;
-        private DateTime? _fechaRecepcion;//puede ser null, cuando todavía no se recibió el pedido
+        private DateTime? _fechaRecepcion;
         private EstadoOrdenCompra _estado;
         private List<OrdenCompraDetalle> _detalle;
 
-        public int IdOrdenCompra
-        {
-            get => _idOrdenCompra;
-            set => _idOrdenCompra = value;
-        }
+        //Propiedades propias
         public Proveedor Proveedor
         {
             get => _proveedor;
             set => _proveedor = value;
         }
-        public Usuario Usuario
-        {
-            get => _usuario;
-            set => _usuario = value;
-        }
-        public decimal MontoTotal
-        {
-            get => _montoTotal;
-            set => _montoTotal = value;
-        }
-        public DateTime FechaEmision
-        {
-            get => _fechaEmision;
-            set => _fechaEmision = value;
-        }
-        public DateTime? FechaRecepcion  // nullable: OC pendiente no tiene fecha aún
+        public DateTime? FechaRecepcion
         {
             get => _fechaRecepcion;
             set => _fechaRecepcion = value;
@@ -67,26 +43,48 @@ namespace DistribuidoraElectronicaStock.Entidades
             set => _detalle = value;
         }
 
+        //Propiedades de compatibilidad DocumentoComercial
+
+        public int IdOrdenCompra
+        {
+            get => Id;
+            set => Id = value;
+        }
+        public DateTime FechaEmision 
+        {
+            get => Fecha;
+            set => Fecha = value;
+        }
+
+        //Constructores
         public OrdenCompra()
         {
             _detalle = new List<OrdenCompraDetalle>();
         }
 
-        public OrdenCompra(int idOrdenCompra, Proveedor proveedor, Usuario usuario, decimal montoTotal, DateTime fechaEmision, DateTime? fechaRecepcion, EstadoOrdenCompra estado)
+        public OrdenCompra(int idOrdenCompra, Proveedor proveedor, Usuario usuario,
+                           decimal montoTotal, DateTime fechaEmision,
+                           DateTime? fechaRecepcion, EstadoOrdenCompra estado)
+            : base(idOrdenCompra, usuario, fechaEmision, montoTotal) 
         {
-            _idOrdenCompra = idOrdenCompra;
             _proveedor = proveedor;
-            _usuario = usuario;
-            _montoTotal = montoTotal;
-            _fechaEmision = fechaEmision;
             _fechaRecepcion = fechaRecepcion;
             _estado = estado;
             _detalle = new List<OrdenCompraDetalle>();
         }
 
+        //método abstracto
+        public override decimal CalcularTotal()
+        {
+            decimal total = 0;
+            foreach (var d in _detalle)
+                total += d.Subtotal;
+            return total;
+        }
+
         public override string ToString()
         {
-            return $"Orden Compra #{_idOrdenCompra} - {_proveedor.RazonSocial} ( {_estado} )";
+            return $"OC #{Id} — {_proveedor?.RazonSocial} — {Fecha:dd/MM/yyyy}";
         }
     }
 }
