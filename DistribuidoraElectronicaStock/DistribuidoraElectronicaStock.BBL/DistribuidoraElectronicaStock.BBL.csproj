@@ -49,6 +49,7 @@
     <Compile Include="GestorOrdenCompra.cs" />
     <Compile Include="GestorPermisos.cs" />
     <Compile Include="GestorProductos.cs" />
+    <Compile Include="GestorProveedores.cs" />
     <Compile Include="GestorReporteStock.cs" />
     <Compile Include="GestorReporteVentas.cs" />
     <Compile Include="GestorRoles.cs" />
