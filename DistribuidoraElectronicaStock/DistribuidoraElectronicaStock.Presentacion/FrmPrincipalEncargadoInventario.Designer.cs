@@ -50,7 +50,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.panel1.Controls.Add(this.lblEncargadoDeInventario);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(784, 52);
             this.panel1.TabIndex = 0;
@@ -88,7 +88,7 @@
             this.btnGestionProductos.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.btnGestionProductos.ForeColor = System.Drawing.Color.White;
             this.btnGestionProductos.Location = new System.Drawing.Point(25, 133);
-            this.btnGestionProductos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGestionProductos.Margin = new System.Windows.Forms.Padding(2);
             this.btnGestionProductos.Name = "btnGestionProductos";
             this.btnGestionProductos.Size = new System.Drawing.Size(150, 49);
             this.btnGestionProductos.TabIndex = 2;
@@ -116,7 +116,7 @@
             this.btnGestionProveedores.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.btnGestionProveedores.ForeColor = System.Drawing.Color.White;
             this.btnGestionProveedores.Location = new System.Drawing.Point(25, 319);
-            this.btnGestionProveedores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGestionProveedores.Margin = new System.Windows.Forms.Padding(2);
             this.btnGestionProveedores.Name = "btnGestionProveedores";
             this.btnGestionProveedores.Size = new System.Drawing.Size(150, 49);
             this.btnGestionProveedores.TabIndex = 4;
@@ -144,7 +144,7 @@
             this.btnGenerarOrdenCompra.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.btnGenerarOrdenCompra.ForeColor = System.Drawing.Color.White;
             this.btnGenerarOrdenCompra.Location = new System.Drawing.Point(434, 133);
-            this.btnGenerarOrdenCompra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGenerarOrdenCompra.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenerarOrdenCompra.Name = "btnGenerarOrdenCompra";
             this.btnGenerarOrdenCompra.Size = new System.Drawing.Size(150, 49);
             this.btnGenerarOrdenCompra.TabIndex = 6;
@@ -159,7 +159,7 @@
             this.btnRegistrarEntradaStock.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.btnRegistrarEntradaStock.ForeColor = System.Drawing.Color.White;
             this.btnRegistrarEntradaStock.Location = new System.Drawing.Point(434, 200);
-            this.btnRegistrarEntradaStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegistrarEntradaStock.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrarEntradaStock.Name = "btnRegistrarEntradaStock";
             this.btnRegistrarEntradaStock.Size = new System.Drawing.Size(150, 49);
             this.btnRegistrarEntradaStock.TabIndex = 7;
@@ -174,8 +174,8 @@
             this.btnVisualizarBajoStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVisualizarBajoStock.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.btnVisualizarBajoStock.ForeColor = System.Drawing.Color.White;
-            this.btnVisualizarBajoStock.Location = new System.Drawing.Point(434, 267);
-            this.btnVisualizarBajoStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVisualizarBajoStock.Location = new System.Drawing.Point(25, 200);
+            this.btnVisualizarBajoStock.Margin = new System.Windows.Forms.Padding(2);
             this.btnVisualizarBajoStock.Name = "btnVisualizarBajoStock";
             this.btnVisualizarBajoStock.Size = new System.Drawing.Size(150, 49);
             this.btnVisualizarBajoStock.TabIndex = 8;
@@ -191,7 +191,7 @@
             this.btnCerrarSesion.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
             this.btnCerrarSesion.Location = new System.Drawing.Point(623, 401);
-            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(150, 49);
             this.btnCerrarSesion.TabIndex = 9;

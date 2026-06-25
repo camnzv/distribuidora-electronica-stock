@@ -123,7 +123,8 @@
             this.MaximumSize = new System.Drawing.Size(800, 500);
             this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "FrmVisualizarBajoStock";
-            this.Text = "FrmVisualizarBajoStock";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Ver Stock Bajo";
             this.Load += new System.EventHandler(this.FrmVisualizarBajoStock_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

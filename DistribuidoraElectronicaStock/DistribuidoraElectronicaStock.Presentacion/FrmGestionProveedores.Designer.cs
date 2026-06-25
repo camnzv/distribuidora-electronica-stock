@@ -100,7 +100,7 @@
             // 
             this.txtBuscar.Location = new System.Drawing.Point(257, 116);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(175, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(420, 20);
             this.txtBuscar.TabIndex = 13;
             // 
             // btnBuscarProveedor
@@ -110,7 +110,7 @@
             this.btnBuscarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarProveedor.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnBuscarProveedor.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarProveedor.Location = new System.Drawing.Point(164, 162);
+            this.btnBuscarProveedor.Location = new System.Drawing.Point(548, 157);
             this.btnBuscarProveedor.Name = "btnBuscarProveedor";
             this.btnBuscarProveedor.Size = new System.Drawing.Size(129, 37);
             this.btnBuscarProveedor.TabIndex = 14;
@@ -187,7 +187,7 @@
             this.dgvProveedores.RowHeadersVisible = false;
             this.dgvProveedores.RowHeadersWidth = 51;
             this.dgvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProveedores.Size = new System.Drawing.Size(339, 150);
+            this.dgvProveedores.Size = new System.Drawing.Size(616, 150);
             this.dgvProveedores.TabIndex = 19;
             // 
             // FrmGestionProveedores
@@ -206,7 +206,7 @@
             this.Controls.Add(this.menuProv);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "FrmGestionProveedores";
-            this.Text = "FrmGestionProveedores";
+            this.Text = "Gestion de Proveedores";
             this.Load += new System.EventHandler(this.FrmGestionProveedores_Load);
             this.menuProv.ResumeLayout(false);
             this.menuProv.PerformLayout();
