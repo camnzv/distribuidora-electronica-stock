@@ -1,4 +1,5 @@
-﻿using DistribuidoraElectronicaStock.BBL.Helpers;
+﻿using DistribuidoraElectronicaStock.BBL.Excepciones;
+using DistribuidoraElectronicaStock.BBL.Helpers;
 using DistribuidoraElectronicaStock.BBL.Permisos;
 using DistribuidoraElectronicaStock.Entidades;
 using System;
@@ -57,13 +58,15 @@ namespace DistribuidoraElectronicaStock.BBL
             string passwordHash = PasswordHelper.HashPassword(password);
 
             var gestor = new GestorUsuarios();
-            Usuario usuario = gestor.Autenticar(dni, passwordHash); 
+            Usuario usuario = gestor.Autenticar(dni, passwordHash);
 
             if (usuario == null)
-                return ResultadoLogin.CredencialesInvalidas;
+                throw new CredencialesInvalidasException();
+
 
             if (!usuario.Activo)
-                return ResultadoLogin.UsuarioInactivo;
+                throw new UsuarioInactivoException();
+
 
             _usuarioActual = usuario;
             _permisosActuales = new GestorPermisos()
