@@ -52,10 +52,10 @@
             // lbl1
             // 
             this.lbl1.AutoSize = true;
-            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(264, 9);
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.Location = new System.Drawing.Point(290, -2);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(182, 16);
+            this.lbl1.Size = new System.Drawing.Size(253, 24);
             this.lbl1.TabIndex = 0;
             this.lbl1.Text = "Ingrese los datos de la venta ";
             // 
@@ -83,25 +83,26 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(58, 203);
+            this.label2.Location = new System.Drawing.Point(9, 203);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 16);
+            this.label2.Size = new System.Drawing.Size(113, 16);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Producto";
+            this.label2.Text = "Nombre Producto";
             // 
             // txtBuscarProducto
             // 
-            this.txtBuscarProducto.Location = new System.Drawing.Point(125, 199);
+            this.txtBuscarProducto.Location = new System.Drawing.Point(135, 199);
             this.txtBuscarProducto.Name = "txtBuscarProducto";
             this.txtBuscarProducto.Size = new System.Drawing.Size(207, 20);
             this.txtBuscarProducto.TabIndex = 5;
             // 
             // txtBuscarCliente
             // 
-            this.txtBuscarCliente.Location = new System.Drawing.Point(125, 59);
+            this.txtBuscarCliente.Location = new System.Drawing.Point(135, 59);
             this.txtBuscarCliente.Name = "txtBuscarCliente";
             this.txtBuscarCliente.Size = new System.Drawing.Size(207, 20);
             this.txtBuscarCliente.TabIndex = 6;
+            this.txtBuscarCliente.TextChanged += new System.EventHandler(this.txtBuscarCliente_TextChanged);
             // 
             // button1
             // 
@@ -110,7 +111,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(341, 56);
+            this.button1.Location = new System.Drawing.Point(364, 56);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 23);
             this.button1.TabIndex = 7;
@@ -131,10 +132,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 66);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(-3, 63);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 13);
+            this.label3.Size = new System.Drawing.Size(132, 16);
             this.label3.TabIndex = 9;
             this.label3.Text = "CUIT o Razon Social";
             // 
@@ -142,7 +143,7 @@
             // 
             this.lblClienteSeleccionado.AutoSize = true;
             this.lblClienteSeleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClienteSeleccionado.Location = new System.Drawing.Point(74, 94);
+            this.lblClienteSeleccionado.Location = new System.Drawing.Point(9, 94);
             this.lblClienteSeleccionado.Name = "lblClienteSeleccionado";
             this.lblClienteSeleccionado.Size = new System.Drawing.Size(48, 16);
             this.lblClienteSeleccionado.TabIndex = 10;
@@ -155,7 +156,7 @@
             this.btnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarProducto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBuscarProducto.Location = new System.Drawing.Point(341, 196);
+            this.btnBuscarProducto.Location = new System.Drawing.Point(364, 196);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
             this.btnBuscarProducto.Size = new System.Drawing.Size(120, 23);
             this.btnBuscarProducto.TabIndex = 11;

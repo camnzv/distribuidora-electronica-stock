@@ -168,6 +168,18 @@ namespace DistribuidoraElectronicaStock.Presentacion
                 return;
             }
 
+            // verifico que no haya agregado el mismo producto antes
+            for (int i = 0; i < _detalle.Count; i++)
+            {
+                if (_detalle[i].ProductoId == _productoSeleccionado.IdProducto)
+                {
+                    MessageBox.Show("Este producto ya fue agregado. Si querés cambiar la cantidad eliminalo y volvé a agregarlo.",
+                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
+            // verifico stock suficiente
             if (cantidad > _productoSeleccionado.StockActual)
             {
                 MessageBox.Show($"Stock insuficiente. Stock disponible: {_productoSeleccionado.StockActual}",
@@ -175,7 +187,6 @@ namespace DistribuidoraElectronicaStock.Presentacion
                 return;
             }
 
-            // creo el objeto VentaDetalle
             VentaDetalle detalle = new VentaDetalle(
                 _productoSeleccionado.IdProducto,
                 _productoSeleccionado.Nombre,
@@ -183,13 +194,9 @@ namespace DistribuidoraElectronicaStock.Presentacion
                 _productoSeleccionado.PrecioVenta
             );
 
-            // lo agrego a la lista
             _detalle.Add(detalle);
-
-            // actualizo el total
             _total += detalle.Subtotal;
 
-            // limpio para el próximo producto
             txtCantidad.Text = "";
             lblProductoSeleccionado.Text = "Producto: -";
             _productoSeleccionado = null;
@@ -251,6 +258,20 @@ namespace DistribuidoraElectronicaStock.Presentacion
             txtBuscarCliente.Text = "";
             txtBuscarProducto.Text = "";
             txtCantidad.Text = "";
+        }
+
+        private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBuscarCliente.Text))
+            {
+                // limpio la tabla de clientes
+                dgvClientes.Rows.Clear();
+                dgvClientes.Visible = true;
+
+                // reseteo el cliente seleccionado
+                _clienteSeleccionado = null;
+                lblClienteSeleccionado.Text = "Cliente: -";
+            }
         }
     }
 }
