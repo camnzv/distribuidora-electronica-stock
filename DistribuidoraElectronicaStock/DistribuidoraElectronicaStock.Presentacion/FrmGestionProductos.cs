@@ -1,4 +1,5 @@
 ﻿using DistribuidoraElectronicaStock.BBL;
+using DistribuidoraElectronicaStock.BBL.Excepciones;
 using DistribuidoraElectronicaStock.Entidades;
 using System;
 using System.Collections.Generic;
@@ -70,10 +71,8 @@ namespace DistribuidoraElectronicaStock.Presentacion
                 dgvProductos.Rows.Clear();
                 dgvProductos.Columns.Clear();
 
-
                 dgvProductos.Columns.Add("id_producto", "ID");
                 dgvProductos.Columns["id_producto"].Visible = false;
-
                 dgvProductos.Columns.Add("codigo", "Código");
                 dgvProductos.Columns.Add("nombre", "Nombre");
                 dgvProductos.Columns.Add("categoria", "Categoría");
@@ -84,36 +83,30 @@ namespace DistribuidoraElectronicaStock.Presentacion
                 foreach (Producto p in _productos)
                 {
                     int indice = dgvProductos.Rows.Add(
-                        p.IdProducto,
-                        p.Codigo,
-                        p.Nombre,
+                        p.IdProducto, p.Codigo, p.Nombre,
                         p.CategoriaProducto?.Categoria,
-                        $"${p.PrecioVenta:N2}",
-                        p.StockActual,
-                        $"{p.Iva}%"
+                        $"${p.PrecioVenta:N2}", p.StockActual, $"{p.Iva}%"
                     );
 
-                    //si el stock es bajo
                     if (p.StockActual < p.StockMinimo)
                     {
-                        dgvProductos.Rows[indice].DefaultCellStyle.ForeColor =
-                            System.Drawing.Color.Red;
+                        dgvProductos.Rows[indice].DefaultCellStyle.ForeColor = Color.Red;
                         dgvProductos.Rows[indice].Cells["stock"].Style.Font =
-                            new System.Drawing.Font("Segoe UI", 9, System.Drawing.FontStyle.Bold);
+                            new Font("Segoe UI", 9, FontStyle.Bold);
                     }
                 }
-
-                if (_productos.Count == 0)
-                    MessageBox.Show("No se encontraron productos.", "Sin resultados",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (ProductoNoEncontradoException ex)
+            {
+                dgvProductos.Rows.Clear();
+                MessageBox.Show(ex.Message, "Sin resultados",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al buscar productos:\n{ex.Message}",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
         }
 
 
