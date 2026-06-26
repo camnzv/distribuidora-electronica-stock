@@ -188,12 +188,21 @@ namespace DistribuidoraElectronicaStock.Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
-
             Usuario usuario = RecuperarUsuarioSeleccionado();
             if (usuario == null) return;
 
-            // si el usuario ya esta inactivo
+            // Verificar que no se esté desactivando a sí mismo
+            Usuario usuarioLogueado = GestorSesion.RecuperarInstancia().UsuarioActual;
+            if (usuario.IdUsuario == usuarioLogueado.IdUsuario)
+            {
+                MessageBox.Show(
+                    "No puede desactivar su propio usuario mientras tiene la sesión iniciada.",
+                    "Operación no permitida",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Si el usuario ya está inactivo
             if (!usuario.Activo)
             {
                 MessageBox.Show("El usuario ya se encuentra inactivo.",

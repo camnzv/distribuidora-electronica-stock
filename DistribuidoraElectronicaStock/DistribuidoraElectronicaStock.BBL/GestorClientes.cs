@@ -1,4 +1,5 @@
-﻿using DistribuidoraElectronicaStock.DAL;
+﻿using DistribuidoraElectronicaStock.BBL.Excepciones;
+using DistribuidoraElectronicaStock.DAL;
 using DistribuidoraElectronicaStock.Entidades;
 using System.Collections.Generic;
 
@@ -21,7 +22,7 @@ namespace DistribuidoraElectronicaStock.BBL
         public List<Cliente> BuscarCliente(string busqueda)
         {
             if (string.IsNullOrWhiteSpace(busqueda))
-                return _clienteDAL.ObtenerClientes(); // si no escribe nada trae todos
+                return _clienteDAL.ObtenerClientes();
 
             return _clienteDAL.BuscarCliente(busqueda);
         }
@@ -33,6 +34,10 @@ namespace DistribuidoraElectronicaStock.BBL
 
             if (string.IsNullOrWhiteSpace(cliente.RazonSocial))
                 return -1;
+
+            // Verifica si ya existe un cliente con ese CUIT
+            if (_clienteDAL.ExisteCuit(cliente.Cuit))
+                throw new ClienteYaExisteException(cliente.Cuit);
 
             return _clienteDAL.AgregarCliente(cliente);
         }
@@ -59,4 +64,6 @@ namespace DistribuidoraElectronicaStock.BBL
             return _clienteDAL.DesactivarCliente(idCliente);
         }
     }
+
+       
 }

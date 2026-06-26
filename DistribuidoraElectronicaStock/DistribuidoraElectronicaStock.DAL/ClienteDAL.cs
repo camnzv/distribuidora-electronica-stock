@@ -123,5 +123,20 @@ namespace DistribuidoraElectronicaStock.DAL
 
             return _conexion.EscribirPorStoreProcedure("SP_DESACTIVAR_CLIENTE", parametros);
         }
+
+
+
+        public bool ExisteCuit(string cuit)
+        {
+            SqlParameter[] parametros =
+            {
+        _conexion.crearParametro("@cuit", cuit)
+        };
+
+            DataTable tabla = _conexion.LeerPorStoreProcedure(
+                "SP_VERIFICAR_CUIT_CLIENTE", parametros);
+
+            return tabla != null && tabla.Rows.Count > 0;
+        }
     }
 }

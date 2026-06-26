@@ -1,4 +1,5 @@
-﻿using DistribuidoraElectronicaStock.DAL;
+﻿using DistribuidoraElectronicaStock.BBL.Excepciones;
+using DistribuidoraElectronicaStock.DAL;
 using DistribuidoraElectronicaStock.Entidades;
 using System;
 using System.Collections.Generic;
@@ -15,12 +16,20 @@ namespace DistribuidoraElectronicaStock.BBL
         private List<IObservadorStock> _observadores = new List<IObservadorStock>();
 
         public List<Producto> BuscarProductos(string nombre = null, string codigo = null,
-                                               int? categoria = null, int? activo = null)
+                                         int? categoria = null, int? activo = null)
         {
-            return _productoDAL.BuscarProductos(nombre, codigo, categoria, activo);
+            var productos = _productoDAL.BuscarProductos(nombre, codigo, categoria, activo);
+
+            if (productos.Count == 0 && !string.IsNullOrEmpty(codigo))
+                throw new ProductoNoEncontradoException(codigo);
+
+            if (productos.Count == 0 && !string.IsNullOrEmpty(nombre))
+                throw new ProductoNoEncontradoException(nombre);
+
+            return productos;
         }
 
-             public bool AgregarProducto(Producto producto)
+        public bool AgregarProducto(Producto producto)
         {
             int filasAfectadas = _productoDAL.AgregarProducto(producto);
 
