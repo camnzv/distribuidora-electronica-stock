@@ -171,5 +171,49 @@ namespace DistribuidoraElectronicaStock.DAL
 
             return conexion.EscribirPorStoreProcedure("SP_ACTUALIZAR_ORDENES_COMPRA_DETALLE_CANTIDAD_RECIBIDA", parametros) > 0;
         }
+
+        //Inserta la orden y devuelve el ID generado
+        public int InsertarOrden(OrdenCompra orden)
+        {
+            SqlParameter[] parametros =
+            {
+                conexion.crearParametro("@proveedor_id",  orden.Proveedor.IdProveedor),
+                conexion.crearParametro("@usuario_id",    orden.Usuario.IdUsuario),
+                conexion.crearParametro("@monto_total",   (double)orden.MontoTotal),
+                conexion.crearParametro("@fecha_emision", orden.FechaEmision),
+                conexion.crearParametro("@estado",        orden.Estado.ToString().ToUpper())
+            };
+
+            // SP devuelve una tabla con el ID
+            DataTable tabla = conexion.LeerPorStoreProcedure("SP_INSERTAR_ORDEN_COMPRA", parametros);
+
+            if (tabla == null || tabla.Rows.Count == 0) return -1;
+            return Convert.ToInt32(tabla.Rows[0]["id_orden_compra"]);
+        }
+
+        //Inserta un ítem del detalle
+        public bool InsertarDetalle(OrdenCompraDetalle detalle)
+        {
+            SqlParameter[] parametros =
+            {
+                conexion.crearParametro("@orden_compra_id", detalle.OrdenCompraId),
+                conexion.crearParametro("@producto_id",     detalle.Producto.IdProducto),
+                conexion.crearParametro("@cantidad",        detalle.Cantidad),
+                conexion.crearParametro("@monto_unitario",  (double)detalle.MontoUnitario)
+            };
+
+            return conexion.EscribirPorStoreProcedure("SP_INSERTAR_ORDEN_COMPRA_DETALLE", parametros) > 0;
+        }
+
+        public bool ActualizarPrecioCompraProducto(int idProducto, decimal precioCompra)
+        {
+            SqlParameter[] parametros =
+            {
+                conexion.crearParametro("@idProducto",   idProducto),
+                conexion.crearParametro("@precioCompra", (double)precioCompra)
+            };
+
+         return conexion.EscribirPorStoreProcedure("SP_ACTUALIZAR_PRECIO_COMPRA_PRODUCTO", parametros) > 0;
+        }
     }
 }

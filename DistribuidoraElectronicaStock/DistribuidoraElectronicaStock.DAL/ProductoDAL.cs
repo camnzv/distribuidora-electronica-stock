@@ -146,7 +146,12 @@ namespace DistribuidoraElectronicaStock.DAL
             return _conexion.EscribirPorStoreProcedure("SP_ELIMINAR_PRODUCTO", parametros);
         }
 
+        public List<Producto> ObtenerTodos()
+        {
+            DataTable tabla = _conexion.LeerPorStoreProcedure("SP_OBTENER_PRODUCTOS_ACTIVOS");
 
+            return ParsearProductos(tabla);
+        }
     }
 
 }

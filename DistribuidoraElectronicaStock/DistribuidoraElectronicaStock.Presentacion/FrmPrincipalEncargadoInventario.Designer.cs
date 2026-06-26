@@ -150,6 +150,7 @@
             this.btnGenerarOrdenCompra.TabIndex = 6;
             this.btnGenerarOrdenCompra.Text = "Generar Orden de Compra";
             this.btnGenerarOrdenCompra.UseVisualStyleBackColor = false;
+            this.btnGenerarOrdenCompra.Click += new System.EventHandler(this.btnGenerarOrdenCompra_Click);
             // 
             // btnRegistrarEntradaStock
             // 

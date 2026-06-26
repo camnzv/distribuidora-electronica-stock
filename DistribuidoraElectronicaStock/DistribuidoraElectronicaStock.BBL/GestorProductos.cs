@@ -75,5 +75,7 @@ namespace DistribuidoraElectronicaStock.BBL
 
             return productos;
         }
+
+        public List<Producto> ObtenerTodos()=> _productoDAL.ObtenerTodos();
     }
 }
