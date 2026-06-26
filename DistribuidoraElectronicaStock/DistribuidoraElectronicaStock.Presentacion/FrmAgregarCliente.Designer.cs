@@ -196,7 +196,7 @@
             this.Controls.Add(this.txtCuit);
             this.Controls.Add(this.label1);
             this.Name = "FrmAgregarCliente";
-            this.Text = "FrmAgregarCliente";
+            this.Text = "Agregar Cliente";
             this.Load += new System.EventHandler(this.FrmAgregarCliente_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();

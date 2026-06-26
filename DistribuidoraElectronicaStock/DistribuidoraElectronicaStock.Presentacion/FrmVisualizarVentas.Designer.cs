@@ -43,7 +43,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 98);
+            this.label1.Location = new System.Drawing.Point(12, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 13);
             this.label1.TabIndex = 0;
@@ -61,9 +61,9 @@
             // 
             // txtBuscarCliente
             // 
-            this.txtBuscarCliente.Location = new System.Drawing.Point(172, 95);
+            this.txtBuscarCliente.Location = new System.Drawing.Point(156, 51);
             this.txtBuscarCliente.Name = "txtBuscarCliente";
-            this.txtBuscarCliente.Size = new System.Drawing.Size(245, 20);
+            this.txtBuscarCliente.Size = new System.Drawing.Size(279, 20);
             this.txtBuscarCliente.TabIndex = 2;
             this.txtBuscarCliente.TextChanged += new System.EventHandler(this.txtBuscarCliente_TextChanged);
             // 
@@ -74,7 +74,7 @@
             this.btnBuscarVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarVentas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBuscarVentas.Location = new System.Drawing.Point(467, 85);
+            this.btnBuscarVentas.Location = new System.Drawing.Point(463, 51);
             this.btnBuscarVentas.Name = "btnBuscarVentas";
             this.btnBuscarVentas.Size = new System.Drawing.Size(129, 31);
             this.btnBuscarVentas.TabIndex = 17;
@@ -86,9 +86,9 @@
             // 
             this.dgvVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVentas.Location = new System.Drawing.Point(-2, 137);
+            this.dgvVentas.Location = new System.Drawing.Point(-2, 88);
             this.dgvVentas.Name = "dgvVentas";
-            this.dgvVentas.Size = new System.Drawing.Size(802, 76);
+            this.dgvVentas.Size = new System.Drawing.Size(802, 143);
             this.dgvVentas.TabIndex = 18;
             this.dgvVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellClick);
             // 
@@ -98,7 +98,7 @@
             this.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalle.Location = new System.Drawing.Point(-2, 260);
             this.dgvDetalle.Name = "dgvDetalle";
-            this.dgvDetalle.Size = new System.Drawing.Size(802, 76);
+            this.dgvDetalle.Size = new System.Drawing.Size(802, 122);
             this.dgvDetalle.TabIndex = 19;
             // 
             // lblDetalle
@@ -139,7 +139,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmVisualizarVentas";
-            this.Text = "FrmVisualizarVentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Visualizar Ventas";
             this.Load += new System.EventHandler(this.FrmVisualizarVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).EndInit();

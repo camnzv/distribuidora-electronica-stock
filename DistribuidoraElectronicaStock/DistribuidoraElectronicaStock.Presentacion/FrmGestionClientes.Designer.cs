@@ -99,7 +99,7 @@
             this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(155, 144);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(303, 140);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(129, 37);
             this.btnBuscarCliente.TabIndex = 9;
@@ -169,7 +169,7 @@
             // 
             this.txtBuscar.Location = new System.Drawing.Point(242, 100);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(132, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(190, 20);
             this.txtBuscar.TabIndex = 12;
             // 
             // label2
@@ -191,7 +191,7 @@
             this.dgvClientes.RowHeadersVisible = false;
             this.dgvClientes.RowHeadersWidth = 51;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(339, 150);
+            this.dgvClientes.Size = new System.Drawing.Size(715, 150);
             this.dgvClientes.TabIndex = 14;
             // 
             // FrmGestionClientes
@@ -209,7 +209,7 @@
             this.Controls.Add(this.btnDesactivarCliente);
             this.Controls.Add(this.btnEditarCliente);
             this.Name = "FrmGestionClientes";
-            this.Text = "FrmGestionClientes";
+            this.Text = "Gestión de Clientes";
             this.Load += new System.EventHandler(this.FrmGestionClientes_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
