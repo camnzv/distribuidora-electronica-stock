@@ -130,7 +130,7 @@
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblCliente);
             this.Name = "FrmConfirmarVenta";
-            this.Text = "Form1";
+            this.Text = "Detalle de Venta";
             this.Load += new System.EventHandler(this.FrmConfirmarVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).EndInit();
             this.ResumeLayout(false);

@@ -219,7 +219,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.menu);
             this.Name = "FrmAgregarProveedor";
-            this.Text = "FrmAgregarProveedor";
+            this.Text = "Agregar Proveedor";
             this.Load += new System.EventHandler(this.FrmAgregarProveedor_Load_1);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();

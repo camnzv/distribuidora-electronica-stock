@@ -124,7 +124,7 @@
             this.Controls.Add(this.btnVerVentas);
             this.Controls.Add(this.btnRegistrarVenta);
             this.Name = "FrmGestionVentas";
-            this.Text = "FrmGestionVentas";
+            this.Text = "Gestion de Ventas";
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.ResumeLayout(false);

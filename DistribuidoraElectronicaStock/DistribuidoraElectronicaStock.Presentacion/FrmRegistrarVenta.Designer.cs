@@ -254,7 +254,8 @@
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.lbl1);
             this.Name = "FrmRegistrarVenta";
-            this.Text = "FrmRegistarVenta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Registar Nueva Venta";
             this.Load += new System.EventHandler(this.FrmRegistarVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();

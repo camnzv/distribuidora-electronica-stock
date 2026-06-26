@@ -203,7 +203,7 @@
             this.Controls.Add(this.dgvVentas);
             this.Controls.Add(this.pnlFiltros);
             this.Name = "FrmReporteVentasGerente";
-            this.Text = "FrmReporteVentasGerente";
+            this.Text = "Reporte de Ventas";
             this.Load += new System.EventHandler(this.FrmReporteVentasGerente_Load_1);
             this.pnlFiltros.ResumeLayout(false);
             this.pnlFiltros.PerformLayout();
