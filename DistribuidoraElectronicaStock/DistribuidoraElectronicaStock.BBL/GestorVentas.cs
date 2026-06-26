@@ -29,7 +29,7 @@ namespace DistribuidoraElectronicaStock.BBL
             if (venta.Detalle == null || venta.Detalle.Count == 0)
                 return -1;
 
-            if (venta.Total <= 0)
+            if (venta.MontoTotal <= 0)
                 return -1;
 
             return _ventaDAL.RegistrarVenta(venta);
@@ -40,6 +40,25 @@ namespace DistribuidoraElectronicaStock.BBL
         {
             ProductoDAL productoDAL = new ProductoDAL();
             return productoDAL.BuscarProductos(nombre);
+        }
+
+
+        public List<Venta> ObtenerVentasPorCliente(string busqueda)
+        {
+            // valida si está vacio no busca
+            if (string.IsNullOrWhiteSpace(busqueda))
+                return new List<Venta>();
+
+            return _ventaDAL.ObtenerVentasPorCliente(busqueda);
+        }
+
+        public List<VentaDetalle> ObtenerDetalleVenta(int ventaId)
+        {
+            
+            if (ventaId <= 0)
+                return new List<VentaDetalle>();
+
+            return _ventaDAL.ObtenerDetalleVenta(ventaId);
         }
     }
 }

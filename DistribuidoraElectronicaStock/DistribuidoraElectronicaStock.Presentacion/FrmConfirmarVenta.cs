@@ -23,7 +23,7 @@ namespace DistribuidoraElectronicaStock.Presentacion
             // muestro los datos de la cabecera
             lblCliente.Text = "Cliente: " + _venta.NombreCliente;
             lblFecha.Text = "Fecha: " + _venta.Fecha.ToString("dd/MM/yyyy");
-            lblTotal.Text = "Total: $" + _venta.Total.ToString("N2");
+            lblTotal.Text = "Total: $" + _venta.MontoTotal.ToString("N2");
 
             ConfigurarGrilla();
             CargarDetalle();
