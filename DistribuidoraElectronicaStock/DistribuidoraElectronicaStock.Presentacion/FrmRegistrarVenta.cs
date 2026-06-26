@@ -223,11 +223,11 @@ namespace DistribuidoraElectronicaStock.Presentacion
             venta.ClienteId = _clienteSeleccionado.IdCliente;
             venta.NombreCliente = _clienteSeleccionado.RazonSocial;
             venta.Fecha = dtpFecha.Value;
-            venta.Total = _total;
+            venta.MontoTotal = _total;
             venta.Detalle = _detalle;
 
             // tomamos el usuario de la sesión activa
-            venta.UsuarioId = GestorSesion.RecuperarInstancia().UsuarioActual.IdUsuario;
+            venta.Usuario = GestorSesion.RecuperarInstancia().UsuarioActual;
 
             // abro FrmConfirmarVenta pasando la venta
             FrmConfirmarVenta frm = new FrmConfirmarVenta(venta);
