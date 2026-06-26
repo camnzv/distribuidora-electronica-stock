@@ -42,16 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriaProductoDAL.cs.cs" />
     <Compile Include="ClienteDAL.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="OrdenCompraDAL.cs" />
     <Compile Include="PermisoDAL.cs" />
     <Compile Include="ProductoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProveedorDAL.cs" />
     <Compile Include="ReporteStockDAL.cs" />
     <Compile Include="ReporteVentasDAL.cs" />
     <Compile Include="RolDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
+    <Compile Include="VentaDal.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DistribuidoraElectronicaStock.Entidades\DistribuidoraElectronicaStock.Entidades.csproj">

@@ -1,4 +1,5 @@
 ﻿using DistribuidoraElectronicaStock.BBL;
+using DistribuidoraElectronicaStock.BBL.Excepciones;
 using DistribuidoraElectronicaStock.Entidades;
 using System;
 using System.Windows.Forms;
@@ -53,35 +54,49 @@ namespace DistribuidoraElectronicaStock.Presentacion
 
         private void Agregar()
         {
-            Cliente nuevoCliente = new Cliente(
-                0,
-                txtCuit.Text.Trim(),
-                txtRazonSocial.Text.Trim(),
-                txtEmail.Text.Trim(),
-                txtTelefono.Text.Trim(),
-                true
-            );
-
-            int resultado = _gestorClientes.AgregarCliente(nuevoCliente);
-
-            if (resultado == -1)
+            try
             {
-                MessageBox.Show("CUIT y Razón Social son obligatorios.",
-                    "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                Cliente nuevoCliente = new Cliente(
+                    0,
+                    txtCuit.Text.Trim(),
+                    txtRazonSocial.Text.Trim(),
+                    txtEmail.Text.Trim(),
+                    txtTelefono.Text.Trim(),
+                    true
+                );
+
+                int resultado = _gestorClientes.AgregarCliente(nuevoCliente);
+
+                if (resultado == -1)
+                {
+                    MessageBox.Show("CUIT y Razón Social son obligatorios.",
+                        "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (resultado > 0)
+                {
+                    MessageBox.Show("Cliente agregado correctamente.",
+                        "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo agregar el cliente.",
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-
-            if (resultado > 0)
+            catch (ClienteYaExisteException ex)
             {
-                MessageBox.Show("Cliente agregado correctamente.",
-                    "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                MessageBox.Show(ex.Message, "Cliente duplicado",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCuit.Focus();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se pudo agregar el cliente.",
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error inesperado:\n{ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

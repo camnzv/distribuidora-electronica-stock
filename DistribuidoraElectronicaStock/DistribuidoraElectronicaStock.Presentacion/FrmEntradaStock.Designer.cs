@@ -364,7 +364,7 @@
             this.MinimumSize = new System.Drawing.Size(1000, 500);
             this.Name = "FrmEntradaStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Encargado de Inventario - Registrar Entrada de Stock";
+            this.Text = "Registrar Entrada de Stock";
             this.Load += new System.EventHandler(this.FrmEntradaStock_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

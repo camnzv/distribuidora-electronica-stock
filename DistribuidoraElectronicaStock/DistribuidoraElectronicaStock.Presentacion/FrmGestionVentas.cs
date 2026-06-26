@@ -38,20 +38,15 @@ namespace DistribuidoraElectronicaStock.Presentacion
 
         private void btnRegistrarVenta_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-              "Registrar Venta - Próxima entrega.",
-              "Info",
-              MessageBoxButtons.OK,
-              MessageBoxIcon.Information);
+            FrmRegistrarVenta frm = new FrmRegistrarVenta();
+
+            frm.ShowDialog();
         }
 
         private void btnVerVentas_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-             "Ver Ventas - Próxima entrega.",
-             "Info",
-             MessageBoxButtons.OK,
-             MessageBoxIcon.Information);
+            FrmVisualizarVentas frm = new FrmVisualizarVentas();
+            frm.ShowDialog();
         }
 
 

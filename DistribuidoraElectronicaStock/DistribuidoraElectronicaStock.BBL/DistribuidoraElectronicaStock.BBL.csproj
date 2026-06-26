@@ -42,9 +42,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlertaBajoStockLogger.cs" />
+    <Compile Include="Excepciones\ClienteYaExisteException.cs" />
+    <Compile Include="Excepciones\CredencialesInvalidasException.cs" />
+    <Compile Include="Excepciones\ProductoNoEncontradoException.cs" />
+    <Compile Include="Excepciones\UsuarioInactivoException.cs" />
+    <Compile Include="Factories\UsuarioFactory.cs" />
+    <Compile Include="GestorCategorias.cs" />
     <Compile Include="GestorOrdenCompra.cs" />
     <Compile Include="GestorPermisos.cs" />
     <Compile Include="GestorProductos.cs" />
+    <Compile Include="GestorProveedores.cs" />
     <Compile Include="GestorReporteStock.cs" />
     <Compile Include="GestorReporteVentas.cs" />
     <Compile Include="GestorRoles.cs" />
@@ -52,6 +59,7 @@
     <Compile Include="GestorClientes.cs" />
     <Compile Include="GestorSesion.cs" />
     <Compile Include="GestorUsuarios.cs" />
+    <Compile Include="Helpers\PasswordHelper.cs" />
     <Compile Include="IObservadorStock.cs" />
     <Compile Include="Permisos\GrupoPermisos.cs" />
     <Compile Include="Permisos\IComponentePermiso.cs" />

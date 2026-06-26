@@ -1,4 +1,5 @@
-﻿using DistribuidoraElectronicaStock.DAL;
+﻿using DistribuidoraElectronicaStock.BBL.Excepciones;
+using DistribuidoraElectronicaStock.DAL;
 using DistribuidoraElectronicaStock.Entidades;
 using System;
 using System.Collections.Generic;
@@ -15,10 +16,50 @@ namespace DistribuidoraElectronicaStock.BBL
         private List<IObservadorStock> _observadores = new List<IObservadorStock>();
 
         public List<Producto> BuscarProductos(string nombre = null, string codigo = null,
-                                               int? categoria = null, int? activo = null)
+                                         int? categoria = null, int? activo = null)
         {
-            return _productoDAL.BuscarProductos(nombre, codigo, categoria, activo);
+            var productos = _productoDAL.BuscarProductos(nombre, codigo, categoria, activo);
+
+            if (productos.Count == 0 && !string.IsNullOrEmpty(codigo))
+                throw new ProductoNoEncontradoException(codigo);
+
+            if (productos.Count == 0 && !string.IsNullOrEmpty(nombre))
+                throw new ProductoNoEncontradoException(nombre);
+
+            return productos;
         }
+
+        public bool AgregarProducto(Producto producto)
+        {
+            int filasAfectadas = _productoDAL.AgregarProducto(producto);
+
+            if (filasAfectadas > 0)
+            {
+                NotificarSiCorresponde(producto);
+                return true;
+            }
+            return false;
+        }
+
+        public bool EditarProducto(Producto producto)
+        {
+            int filasAfectadas = _productoDAL.EditarProducto(producto);
+
+            if (filasAfectadas > 0)
+            {
+                NotificarSiCorresponde(producto);
+                return true;
+            }
+            return false;
+        }
+
+        public bool EliminarProducto(int idProducto)
+        {
+            int filasAfectadas = _productoDAL.EliminarProducto(idProducto);
+            return filasAfectadas > 0;
+        }
+
+
 
         //Gestion de observadores
         public void SuscribirObservador(IObservadorStock observador) => _observadores.Add(observador);
@@ -43,5 +84,7 @@ namespace DistribuidoraElectronicaStock.BBL
 
             return productos;
         }
+
+        public List<Producto> ObtenerTodos()=> _productoDAL.ObtenerTodos();
     }
 }

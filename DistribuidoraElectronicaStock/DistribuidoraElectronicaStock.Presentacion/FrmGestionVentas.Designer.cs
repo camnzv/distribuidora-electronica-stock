@@ -65,7 +65,7 @@
             this.btnVerVentas.Name = "btnVerVentas";
             this.btnVerVentas.Size = new System.Drawing.Size(129, 43);
             this.btnVerVentas.TabIndex = 4;
-            this.btnVerVentas.Text = "Ver Ventas";
+            this.btnVerVentas.Text = "Visualizar Ventas";
             this.btnVerVentas.UseVisualStyleBackColor = false;
             this.btnVerVentas.Click += new System.EventHandler(this.btnVerVentas_Click);
             // 
@@ -124,7 +124,7 @@
             this.Controls.Add(this.btnVerVentas);
             this.Controls.Add(this.btnRegistrarVenta);
             this.Name = "FrmGestionVentas";
-            this.Text = "FrmGestionVentas";
+            this.Text = "Gestion de Ventas";
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.ResumeLayout(false);

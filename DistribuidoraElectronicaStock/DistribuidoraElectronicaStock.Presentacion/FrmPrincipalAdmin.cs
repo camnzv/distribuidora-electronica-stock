@@ -32,7 +32,7 @@ namespace DistribuidoraElectronicaStock.Presentacion
             lblRol.Text = $"Perfil: {usuario.Rol.Nombre}";
 
 
-            btnAgregarUsuario.Enabled = permisos.TienePermiso("AgregarUsuario");
+            btnAgregarUsuario.Visible = permisos.TienePermiso("AgregarUsuario");
             btnBuscarUsuario.Visible= permisos.TienePermiso("BuscarUsuario");
         }
 

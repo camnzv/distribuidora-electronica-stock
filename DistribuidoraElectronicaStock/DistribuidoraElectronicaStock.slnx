@@ -3,4 +3,5 @@
   <Project Path="DistribuidoraElectronicaStock.DAL/DistribuidoraElectronicaStock.DAL.csproj" Id="bcd29a74-f8d7-48a9-8568-887cad6f027f" />
   <Project Path="DistribuidoraElectronicaStock.Entidades/DistribuidoraElectronicaStock.Entidades.csproj" Id="c25e7aed-62bc-4175-82b0-90dce55adbae" />
   <Project Path="DistribuidoraElectronicaStock.Presentacion/DistribuidoraElectronicaStock.Presentacion.csproj" Id="70da8ac3-ea00-4171-abea-023223202e4c" />
+  <Project Path="DistribuidoraElectronicaStock.Tests/DistribuidoraElectronicaStock.Tests.csproj" Id="ba2e67fd-b2eb-4cf7-b116-f8d7194e8157" />
 </Solution>

@@ -133,7 +133,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmPrincipalGerente";
-            this.Text = "FrmPrincipalGerente";
+            this.Text = "Distribuidora Hardwar - Gerente";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

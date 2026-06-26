@@ -77,6 +77,14 @@ namespace DistribuidoraElectronicaStock.Presentacion
                     break;
                 }
             }
+            // si quiere editar su propio usuario no dejo que manipule su estado 
+            Usuario usuarioLogueado = GestorSesion.RecuperarInstancia().UsuarioActual;
+            if (_usuario.IdUsuario == usuarioLogueado.IdUsuario)
+            {
+                chkActivo.Enabled = false;
+                chkActivo.Checked = true; 
+              
+            }
         }
 
       
@@ -129,10 +137,24 @@ namespace DistribuidoraElectronicaStock.Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
+
             if (!ValidarCampos()) return;
 
             try
             {
+                // Validación extra: no puede desactivarse a sí mismo
+                Usuario usuarioLogueado = GestorSesion.RecuperarInstancia().UsuarioActual;
+                if (_usuario.IdUsuario == usuarioLogueado.IdUsuario && !chkActivo.Checked)
+                {
+                    MessageBox.Show(
+                        "No puede desactivar su propio usuario.",
+                        "Operación no permitida",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    chkActivo.Checked = true;
+                    return;
+                }
+
                 _usuario.Nombre = txtNombre.Text.Trim();
                 _usuario.Apellido = txtApellido.Text.Trim();
                 _usuario.Dni = int.Parse(txtDni.Text);

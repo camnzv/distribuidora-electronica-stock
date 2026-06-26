@@ -94,6 +94,7 @@
             this.btnGestionProductos.TabIndex = 2;
             this.btnGestionProductos.Text = "Gestión de Productos";
             this.btnGestionProductos.UseVisualStyleBackColor = false;
+            this.btnGestionProductos.Click += new System.EventHandler(this.btnGestionProductos_Click);
             // 
             // lblGestionProveedores
             // 
@@ -121,6 +122,7 @@
             this.btnGestionProveedores.TabIndex = 4;
             this.btnGestionProveedores.Text = "Gestión de Proveedores";
             this.btnGestionProveedores.UseVisualStyleBackColor = false;
+            this.btnGestionProveedores.Click += new System.EventHandler(this.btnGestionProveedores_Click);
             // 
             // lblOrdenCompra
             // 
@@ -148,6 +150,7 @@
             this.btnGenerarOrdenCompra.TabIndex = 6;
             this.btnGenerarOrdenCompra.Text = "Generar Orden de Compra";
             this.btnGenerarOrdenCompra.UseVisualStyleBackColor = false;
+            this.btnGenerarOrdenCompra.Click += new System.EventHandler(this.btnGenerarOrdenCompra_Click);
             // 
             // btnRegistrarEntradaStock
             // 
@@ -172,7 +175,7 @@
             this.btnVisualizarBajoStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVisualizarBajoStock.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.btnVisualizarBajoStock.ForeColor = System.Drawing.Color.White;
-            this.btnVisualizarBajoStock.Location = new System.Drawing.Point(434, 267);
+            this.btnVisualizarBajoStock.Location = new System.Drawing.Point(25, 200);
             this.btnVisualizarBajoStock.Margin = new System.Windows.Forms.Padding(2);
             this.btnVisualizarBajoStock.Name = "btnVisualizarBajoStock";
             this.btnVisualizarBajoStock.Size = new System.Drawing.Size(150, 49);
@@ -202,7 +205,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.ClientSize = new System.Drawing.Size(784, 460);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnVisualizarBajoStock);
             this.Controls.Add(this.btnRegistrarEntradaStock);
@@ -214,8 +217,8 @@
             this.Controls.Add(this.lblStock);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(800, 500);
-            this.MinimumSize = new System.Drawing.Size(800, 500);
+            this.MaximumSize = new System.Drawing.Size(800, 499);
+            this.MinimumSize = new System.Drawing.Size(800, 499);
             this.Name = "FrmPrincipalEncargadoInventario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Distribuidora Hardware - Encargado de Inventario";

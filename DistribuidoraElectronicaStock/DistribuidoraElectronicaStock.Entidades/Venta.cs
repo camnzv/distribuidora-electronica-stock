@@ -1,42 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DistribuidoraElectronicaStock.Entidades
 {
-    public class Venta
+    public class Venta : DocumentoComercial
     {
-        private int _idVenta;
-        private DateTime _fecha;
-        private decimal _total;
+        private int _clienteId;
+        private string _nombreCliente;
+        private List<VentaDetalle> _detalle;
 
-        public int IdVenta
+        public int ClienteId { get => _clienteId; set => _clienteId = value; }
+        public string NombreCliente { get => _nombreCliente; set => _nombreCliente = value; }
+        public List<VentaDetalle> Detalle { get => _detalle; set => _detalle = value; }
+
+        public Venta()
         {
-            get => _idVenta;
-            set => _idVenta = value;
+            _detalle = new List<VentaDetalle>();
         }
 
-        public DateTime Fecha
+        public Venta(int id, Usuario usuario, int clienteId,
+                     DateTime fecha, decimal montoTotal) : base(id, usuario, fecha, montoTotal)
         {
-            get => _fecha;
-            set => _fecha = value;
+            _clienteId = clienteId;
+            _detalle = new List<VentaDetalle>();
         }
 
-        public decimal Total
+        public override decimal CalcularTotal()
         {
-            get => _total;
-            set => _total = value;
-        }
 
-        public Venta() { }
-
-        public Venta(int idVenta, DateTime fecha, decimal total)
-        {
-            _idVenta = idVenta;
-            _fecha = fecha;
-            _total = total;
+            if (_detalle == null) return 0;
+            decimal total = 0;
+            for (int i = 0; i < _detalle.Count; i++)
+                total += _detalle[i].Subtotal;
+            return total;
         }
     }
 }
