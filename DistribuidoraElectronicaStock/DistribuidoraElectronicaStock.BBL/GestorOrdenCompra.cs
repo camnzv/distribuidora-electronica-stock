@@ -43,6 +43,7 @@ namespace DistribuidoraElectronicaStock.BBL
                 {
                     _ordenCompraDAL.ActualizarStockProducto(detalle.Producto.IdProducto, detalle.CantidadRecibida, 0);
                     _ordenCompraDAL.ActualizarDetalleOrden(detalle);
+                    _ordenCompraDAL.ActualizarPrecioCompraProducto(detalle.Producto.IdProducto, detalle.MontoUnitario);
                 }
             }
 
@@ -54,5 +55,28 @@ namespace DistribuidoraElectronicaStock.BBL
 
             return _ordenCompraDAL.ActualizarOrden(orden);
         }
+
+        public bool GenerarOrden(OrdenCompra orden)
+        {
+            if (orden.Detalle == null || orden.Detalle.Count == 0)
+                return false;
+
+            // Inserta la cabecera y recupera el ID generado por la BD
+            int idOrden = _ordenCompraDAL.InsertarOrden(orden);
+            if (idOrden <= 0) return false;
+
+            orden.IdOrdenCompra = idOrden;
+
+            // Inserta cada ítem del detalle
+            foreach (var detalle in orden.Detalle)
+            {
+                detalle.OrdenCompraId = idOrden;
+                if (!_ordenCompraDAL.InsertarDetalle(detalle))
+                    return false;
+            }
+
+            return true;
+        }
+
     }
 }

@@ -83,6 +83,11 @@ namespace DistribuidoraElectronicaStock.Presentacion
             FrmGestionProveedores frm = new FrmGestionProveedores();
             frm.ShowDialog();
         }
+
+        private void btnGenerarOrdenCompra_Click(object sender, EventArgs e)
+        {
+            new FrmGenerarOrdenCompra().ShowDialog();
+        }
     }
   
 }
